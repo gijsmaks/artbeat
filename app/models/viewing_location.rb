@@ -1,0 +1,2 @@
+class ViewingLocation < ApplicationRecord
+end
