@@ -10,3 +10,22 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar {
+  border-bottom-style: solid;
+  border-bottom-width: 0.2px;
+  border-bottom-color: #e6e6e6;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.0);
+}
+
+.navbar {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.navbar p {
+  margin-bottom: 0rem;
+}

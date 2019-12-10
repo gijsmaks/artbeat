@@ -1,9 +1,9 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Libre+Baskerville|Montserrat:400,600&display=swap");
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Lato";
+$headers-font: "Montserrat";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +14,35 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h1 {
+  font-family: Montserrat !important;
+  font-weight: 600 !important;
+  font-size: 3.16em !important;
+}
+
+h2 {
+  font-family: Montserrat !important;
+  font-weight: 600 !important;
+  font-size: 2.37em !important;
+}
+
+h3 {
+  font-family: Lato !important;
+  font-weight: 400 !important;
+  font-size: 1.33em !important;
+  margin: 0 !important;
+}
+
+
+a {
+  font-family: Lato !important;
+  font-weight: 700 !important;
+  font-size: 1em !important;
+}
+
+p {
+  font-family: Lato !important;
+  font-weight: 400 !important;
+  font-size: 1em !important;
+}
