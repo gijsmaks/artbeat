@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
 
 User.destroy_all
 Artist.destroy_all
@@ -13,9 +12,9 @@ Favorite.destroy_all
 ViewingLocation.destroy_all
 
 ed = User.create(username: 'Edward', email: 'ed@gmail.com', password: '123456'),
-giis = User.create(username: 'Giis', email: 'giis@gmail.com', password: '123456'),
+gijs = User.create(username: 'Gijs', email: 'gijs@gmail.com', password: '123456'),
 ben = User.create(username: 'Ben', email: 'ben@gmail.com', password: '123456'),
-cristos = User.create(username: 'Cristos', email: 'cristos@gmail.com', password: '123456')
+christos = User.create(username: 'Christos', email: 'christos@gmail.com', password: '123456')
 
 puts User.count
 
