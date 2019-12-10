@@ -2,7 +2,7 @@
   <div class="cards">
       <% @artworks.each do |art| %>
         <%= link_to artwork_path(art) do %>
-          <%= render 'artworks/artwork', artwork: art %>
+          <%= render 'artworks/card-artwork', artwork: art %>
         <% end %>
       <% end %>
   </div>
