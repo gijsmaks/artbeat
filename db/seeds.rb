@@ -16,8 +16,6 @@ gijs = User.create(username: 'Gijs', email: 'gijs@gmail.com', password: '123456'
 ben = User.create(username: 'Ben', email: 'ben@gmail.com', password: '123456'),
 christos = User.create(username: 'Christos', email: 'christos@gmail.com', password: '123456')
 
-puts User.count
-
 picasso = Artist.create(name: "Picasso", bio: "Modern artist")
 le_louvre = ViewingLocation.create(name: "Le Louvre", address: "Paris")
 monalisa = Artwork.create(viewing_location: le_louvre, artist: picasso, photo: URI('https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2230&q=80'), title: 'yo yo' , date_of_creation: '12/9/19', description: 'awesome')
