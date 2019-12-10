@@ -1,6 +1,6 @@
 <%= render 'shared/banner' %>
 
-
+<div class="container">
 <div class="cards">
     <% @artworks.each do |art| %>
       <%= link_to artwork_path(art) do %>
@@ -8,7 +8,7 @@
       <% end %>
     <% end %>
 </div>
-
+</div>
 
 
 
