@@ -1,13 +1,13 @@
 <%= render 'shared/banner' %>
 
 <div class="container">
-<div class="cards">
-    <% @artworks.each do |art| %>
-      <%= link_to artwork_path(art) do %>
-        <%= render 'artworks/card-artwork', artwork: art %>
+  <div class="card-columns">
+      <% @artworks.each do |art| %>
+        <%= link_to artwork_path(art) do %>
+          <%= render 'artworks/card-artwork', artwork: art %>
+        <% end %>
       <% end %>
-    <% end %>
-</div>
+  </div>
 </div>
 
 

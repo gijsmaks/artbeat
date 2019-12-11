@@ -5,6 +5,17 @@
   grid-gap: 15px;
 }
 
+.card {
+  border: none;
+  display: inline-block;
+  column-break-inside: avoid;
+  margin-bottom: 0px !important;
+}
+
+.card img {
+  margin-bottom: 0px;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
@@ -48,4 +59,5 @@
 
 .card-columns {
   column-count: 2;
+
 }
