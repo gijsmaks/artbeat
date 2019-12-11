@@ -1,0 +1,6 @@
+<h2><%= current_user.username %></h2>
+<h3><%= current_user.email %></h3>
+
+<% @favorites.each do |fave| %>
+<p><%= fave.artwork.title %></p>
+<% end %>
