@@ -1,9 +1,16 @@
 <div class="container">
-  <div class="card-columns">
-      <% @artworks.each do |art| %>
-        <%= link_to artwork_path(art) do %>
-          <%= render 'artworks/card-artwork', artwork: art %>
+  <%= render 'shared/search' %>
+  <% if @artworks.empty? %>
+    <div>
+      <h3>No results found for "<%= params[:search][:location] %>"</h3>
+    </div>
+  <% else %>
+    <div class="card-columns">
+        <% @artworks.each do |art| %>
+          <%= link_to artwork_path(art) do %>
+            <%= render 'artworks/card-artwork', artwork: art %>
+          <% end %>
         <% end %>
-      <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
