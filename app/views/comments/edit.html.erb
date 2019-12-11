@@ -1,5 +1,9 @@
+
+<div class="container">
+
 <%= simple_form_for [ @artwork, @comment] do |f| %>
   <%= f.error_notification %>
   <%= f.input :content %>
    <%= f.button :submit, class: "btn-primary" %>
 <% end %>
+</div>
