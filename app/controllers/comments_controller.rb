@@ -1,33 +1,34 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:edit, :update, :destroy]
-
-  def index
-    @comments = Comment.all
-  end
-
-  def new
-    @comment = Comment.new
-  end
+  before_action :set_artwork, only: [:create]
 
   def create
     @comment = Comment.new(comment_params)
+    @comment.artwork_id = @artwork.id
+    @comment.user_id = current_user.id
     if @comment.save
-      # TODO
+      redirect_to artwork_path(@artwork)
     else
-      # TODO
+      @comments = @artwork.comments
+      render 'artworks/show'
     end
   end
 
   def edit
-    # TODO
   end
 
   def update
-    # TODO
+    if @comment.update(comment_params)
+      redirect_to artwork_path(@comment.artwork_id)
+    else
+      @comments = @artwork.comments
+      render 'artworks/show'
+    end
   end
 
   def destroy
-    # TODO
+    @comment.destroy
+    redirect_to artwork_path(@comment.artwork_id)
   end
 
   private
@@ -38,5 +39,9 @@ class CommentsController < ApplicationController
 
   def set_comment
     @comment = Comment.find(params[:id])
+  end
+
+  def set_artwork
+    @artwork = Artwork.find(params[:artwork_id])
   end
 end

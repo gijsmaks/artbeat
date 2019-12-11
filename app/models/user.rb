@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :saves
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end

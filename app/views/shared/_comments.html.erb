@@ -1,0 +1,18 @@
+<div class="container">
+
+<h3>Comments</h3>
+
+  <% @artwork.comments.each do |comment| %>
+    <p><strong><%= comment.user.username %></strong>
+    <br> <%= comment.content %></p>
+    <%= link_to "<i class=\"fas fa-pencil-alt\"></i>".html_safe, edit_artwork_comment_path(@artwork.id, comment.id) %>
+    <%= link_to "<i class=\"far fa-trash-alt\"></i>".html_safe, comment_path(comment.id), method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %>
+
+<%= simple_form_for [ @artwork, @comment] do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :content %>
+   <%= f.button :submit, class: "btn-primary" %>
+<% end %>
+
+</div>
