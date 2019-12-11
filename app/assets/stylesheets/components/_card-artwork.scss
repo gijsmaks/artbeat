@@ -37,7 +37,15 @@
   width: 40px;
 }
 
+.card-trip-infos h3, p {
+  color: black;
+}
+
 .cards a {
   text-decoration: none !important;
   color: black;
+}
+
+.card-columns {
+  column-count: 2;
 }

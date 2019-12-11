@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="cards">
+  <div class="card-columns">
       <% @artworks.each do |art| %>
         <%= link_to artwork_path(art) do %>
           <%= render 'artworks/card-artwork', artwork: art %>
