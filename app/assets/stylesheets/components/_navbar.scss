@@ -15,11 +15,44 @@
   border-bottom-style: solid;
   border-bottom-width: 0.2px;
   border-bottom-color: #e6e6e6;
+  line-height: 40px;
 }
 
 .navbar-light .navbar-toggler {
   border-color: rgba(0, 0, 0, 0.0);
+  .navbar-toggler-icon {
+    background-color: black;
+  }
 }
-.navbar p {
-  margin-bottom: 0rem;
+
+.navbar-icon {
+  line-height: 30px;
+  text-align: center;
+  .navbar-toggler-icon {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+.logo {
+  line-height: 40px;
+  a {
+    font-family: Baskerville !important;
+    color: black;
+    font-size: 32px !important;
+    font-weight: lighter !important;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+}
+
+.search-icon {
+  font-size: 22px;
+  text-align: center;
+  line-height: 30px;
+  a {
+    color: black;
+    display: inline-block;
+    vertical-align: middle;
+  }
 }

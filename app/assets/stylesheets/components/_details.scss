@@ -1,7 +1,8 @@
 img {
   width: 100%;
   height: auto;
-  margin: 15px 0px;
+  margin: 0px;
+  margin-bottom: 15px;
 }
 
 .details-head {
@@ -39,4 +40,10 @@ img {
   font-size: 1em;
   font-family: Lato, sans-serif;
   font-weight: 400;
+}
+
+.navbar-icon {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
 }
