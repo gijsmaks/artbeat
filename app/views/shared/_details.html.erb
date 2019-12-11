@@ -1,12 +1,20 @@
-<%= image_tag @artwork.photo, alt: "#" %>
+<%= image_tag artwork.photo, alt: "#" %>
 <div class="container">
   <div class="details-head">
     <div class="headings">
-      <div class="art-title"><%= @artwork.title %></div>
-      <div class="artist-name"><%= @artwork.artist.name %></div>
+      <div class="art-title"><%= artwork.title %></div>
+      <div class="artist-name"><%= artwork.artist.name %></div>
     </div>
     <div class="fave-save">
-      <div><i class="far fa-heart"></i></div>
+      <% if current_user.favorited?(artwork) %>
+        <%= link_to favorite_path, method: :delete do %>
+          <div class="active"><i class="fas fa-heart"></i></div>
+        <% end %>
+      <% else %>
+        <%= link_to artwork_favorites_path(@artwork), method: :post do %>
+          <div class="inactive"><i class="far fa-heart" style="color: black"></i></div>
+        <% end %>
+      <% end %>
       <div><i class="far fa-bookmark"></i></div>
     </div>
   </div>
