@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :saves
   has_many :comments
+
+  def favorited?(artwork)
+    favorites.find_by(artwork_id: artwork.id)
+  end
 end
