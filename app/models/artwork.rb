@@ -4,6 +4,6 @@ class Artwork < ApplicationRecord
   has_many :artwork_categorys
   has_many :categorys, through: :artwork_categorys
   has_many :favorites, dependent: :destroy
-  has_many :saves
+  has_many :saved_artworks
   has_many :comments
 end

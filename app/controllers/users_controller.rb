@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
     @favorites = current_user.favorites
-    @saves = current_user.saves
+    @saved_artworks = current_user.saved_artworks
   end
 end
