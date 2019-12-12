@@ -3,7 +3,6 @@ class ArtworksController < ApplicationController
     @artworks = Artwork.all
     # return unless params[:search]
     # return unless params[:search][:location]
-
     # @location = ViewingLocation.find_by(name: params[:search][:location])
     # @location_id = @location.id if @location
     # @artworks = Artwork.where(viewing_location_id: @location_id)
@@ -12,9 +11,6 @@ class ArtworksController < ApplicationController
     else
       @artworks = Artwork.all
     end
-
-    # Artwork.search_by("picasso").first
-
   end
 
   def show
