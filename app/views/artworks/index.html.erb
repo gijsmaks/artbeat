@@ -2,7 +2,7 @@
   <%= render 'shared/search' %>
   <% if @artworks.empty? %>
     <div>
-      <h3>No results found for "<%= params[:search][:location] %>"</h3>
+      <h3>No results found for "<%= params[:search] %>"</h3>
     </div>
   <% else %>
     <div class="card-columns">
