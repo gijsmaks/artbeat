@@ -101,7 +101,7 @@ def to_img(api_data)
 end
 
 artworks.each do |artwork|
-if !artwork.collecting_institution.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.date.nil?
+if !artwork.collecting_institution.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.date.nil? && !artwork.collecting_institution.nil? && !artwork.medium.nil?
 
 # p artwork
 
