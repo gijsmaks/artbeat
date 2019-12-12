@@ -6,6 +6,7 @@ class ArtworksController < ApplicationController
 
     @location = ViewingLocation.find_by(name: params[:search][:location])
     @location_id = @location.id if @location
+    # Artwork.search_by("picasso").first
     @artworks = Artwork.where(viewing_location_id: @location_id)
   end
 
