@@ -1,0 +1,11 @@
+<h2><%= current_user.username %></h2>
+<h3><%= current_user.email %></h3>
+
+
+<div class="card-columns">
+    <% @favorites.each do |favorite| %>
+      <%= link_to artwork_path(favorite) do %>
+        <%= render 'artworks/card-artwork', artwork: favorite.artwork %>
+      <% end %>
+    <% end %>
+</div>
