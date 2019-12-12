@@ -1,0 +1,31 @@
+.comment-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-bottom: 1px solid #e6e6e6;
+
+}
+
+.name-comment {
+}
+
+
+.edit-delete a {
+  text-decoration: none;
+  color: #a1a1a1;
+}
+
+.edit-delete a:hover {
+  text-decoration: none;
+  color: #4a4a4a;
+}
+
+
+.comment-input {
+  margin-top: 10px;
+
+}
+
+.form-control {
+    width: 100%;
+}
