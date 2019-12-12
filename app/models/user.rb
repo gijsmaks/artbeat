@@ -11,4 +11,12 @@ class User < ApplicationRecord
   def favorited?(artwork)
     favorites.find_by(artwork_id: artwork.id)
   end
+
+  def saved?(artwork)
+    saved_artworks.find_by(artwork_id: artwork.id)
+  end
+
+  def saved_artworks_for(tag)
+    saved_artworks.where(tag: tag).map(&:artwork)
+  end
 end

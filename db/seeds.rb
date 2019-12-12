@@ -56,7 +56,7 @@ Comment.create!(user: gijs, artwork: soup, content: "Beautiful")
 
 puts Comment.count
 
-
+a = SavedArtwork.create(user: ben, artwork: beret, tag: "Paris")
 
 
 

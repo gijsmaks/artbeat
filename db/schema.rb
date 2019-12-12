@@ -69,14 +69,14 @@ ActiveRecord::Schema.define(version: 2019_12_11_170448) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "saved_artwork", force: :cascade do |t|
+  create_table "saved_artworks", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "artwork_id"
     t.string "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artwork_id"], name: "index_saved_artwork_on_artwork_id"
-    t.index ["user_id"], name: "index_saved_artwork_on_user_id"
+    t.index ["artwork_id"], name: "index_saved_artworks_on_artwork_id"
+    t.index ["user_id"], name: "index_saved_artworks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -110,6 +110,6 @@ ActiveRecord::Schema.define(version: 2019_12_11_170448) do
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "artworks"
   add_foreign_key "favorites", "users"
-  add_foreign_key "saved_artwork", "artworks"
-  add_foreign_key "saved_artwork", "users"
+  add_foreign_key "saved_artworks", "artworks"
+  add_foreign_key "saved_artworks", "users"
 end
