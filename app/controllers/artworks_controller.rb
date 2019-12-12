@@ -1,5 +1,4 @@
 class ArtworksController < ApplicationController
-
   def index
     @artworks = Artwork.all
     # return unless params[:search]
@@ -16,6 +15,7 @@ class ArtworksController < ApplicationController
 
   def show
     @artwork = Artwork.find(params[:id])
+    @tags = get_tags
     @comments = @artwork.comments
     @comment = Comment.new
   end
@@ -42,6 +42,10 @@ class ArtworksController < ApplicationController
   # end
 
   private
+
+  def get_tags
+    current_user.saved_artworks.pluck(:tag).uniq
+  end
 
   def comment_params
     params.require(:comment).permit(:content)

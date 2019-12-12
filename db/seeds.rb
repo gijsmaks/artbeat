@@ -58,7 +58,6 @@ christos = User.create(username: 'Christos', email: 'christos@gmail.com', passwo
 # puts Comment.count
 
 
-
 require 'net/http'
 require 'json'
 require 'open-uri'
@@ -69,8 +68,6 @@ client_secret = '5eb9618233d99e41a420164f13ceeb44'
 api_url = URI.parse('https://api.artsy.net/api/tokens/xapp_token')
 response = Net::HTTP.post_form(api_url, client_id: client_id, client_secret: client_secret)
 xapp_token = JSON.parse(response.body)['token']
-
-
 
 api = Hyperclient.new('https://api.artsy.net/api') do |api|
   api.headers['Accept'] = 'application/vnd.artsy-v2+json'
@@ -83,9 +80,6 @@ api = Hyperclient.new('https://api.artsy.net/api') do |api|
     conn.adapter :net_http
   end
 end
-
-
-
 
 artworks = api.artworks(size: 100)
 
@@ -103,10 +97,11 @@ end
 artworks.each do |artwork|
 if !artwork.collecting_institution.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.date.nil?
 
-# p artwork
+paris_save = SavedArtwork.create(user: ben, artwork: beret, tag: "Paris")
+
+  # p artwork
 
   viewing_location = ViewingLocation.create!(name: artwork.collecting_institution)
-  artist = Artist.create!(name: artwork._links.artists.first.name, bio: artwork._links.artists.first.biography)
 
   new_artwork = Artwork.create!(
     title: artwork.title,
@@ -122,8 +117,3 @@ end
 end
 
 puts "created #{Artwork.count} artworks"
-
-
-
-
-

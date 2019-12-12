@@ -8,18 +8,51 @@
     <div class="fave-save">
       <% if current_user.favorited?(artwork) %>
         <%= link_to favorite_path, method: :delete do %>
-          <div class="active"><i class="fas fa-heart"></i></div>
+          <div class="active"><i class="fas fa-heart" style="color: black"></i></div>
         <% end %>
       <% else %>
-        <%= link_to artwork_favorites_path(@artwork), method: :post do %>
+        <%= link_to artwork_favorites_path(artwork), method: :post do %>
           <div class="inactive"><i class="far fa-heart" style="color: black"></i></div>
         <% end %>
       <% end %>
-      <div><i class="far fa-bookmark"></i></div>
+      <% if current_user.saved?(artwork) %>
+          <div class="active-bookmark"><i class="fas fa-bookmark" style="color: black"></i></div>
+      <% else %>
+          <div class="inactive-bookmark"><i class="far fa-bookmark" style="color: black"></i></div>
+      <% end %>
     </div>
   </div>
+
+
+
   <div class="details-body">
     <p class="description"> <%= artwork.description %></p>
   </div>
 
 </div>
+<div class="all-screen">
+  <div class="save-modal">
+    <h3>In which collection would you like to save "<%= artwork.title %>"?</h3>
+    <div>
+      <% @tags.each do |tag| %>
+        <%= link_to artwork_saved_artworks_path(artwork, {saved_artwork: {tag: tag}}), method: :post do %>
+          <div class="d-flex">
+            <div class="collection-image"><%= image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
+            <div>
+              <%= tag %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%#= link_to "", new_artwork_saved_artwork  %>
+    <h3>New collection</h3>
+    <div class="new-save-modal">
+      <%# simple_form_for @saved_artwork do |f| %>
+
+        <%#= f.button :submit %>
+      <%# end %>
+    </div>
+  </div>
+</div>
+
