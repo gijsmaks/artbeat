@@ -82,6 +82,7 @@ api = Hyperclient.new('https://api.artsy.net/api') do |api|
   end
 end
 
+
 artworks = api.artworks(size: 100)
 
 def to_img(api_data)
@@ -94,10 +95,13 @@ def to_img(api_data)
   end
   array.join('.')
 end
+  category_arry = ["Painting", "Photography", "Prints", "Work on Paper", "Drawing"]
 
 artworks.each do |artwork|
+  p artwork.date.to_i
 
-if !artwork.collecting_institution.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.date.nil? && !artwork.collecting_institution.nil? && !artwork.medium.nil?
+
+if !artwork.collecting_institution.nil? && !artwork.date.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.collecting_institution.nil? && !artwork.medium.nil? && category_arry.include?(artwork.category)
 
     # p artwork
 
@@ -110,11 +114,24 @@ if !artwork.collecting_institution.nil? && !artwork._links.artists.first.nil? &&
       artist: artist,
       photo: to_img(artwork),
       date_of_creation: artwork.date,
-      description: artwork.medium,
+      medium: artwork.medium,
+      category: artwork.category,
     )
 
-    puts "title: #{new_artwork.title} - name: #{artist.name} - location: #{viewing_location.name} - date: #{artwork.date} - url: #{to_img(artwork)} - medium: #{artwork.medium}"
+    puts "title: #{new_artwork.title}"
+    puts "location: #{viewing_location.name}"
+    puts "artist: #{artist.name}"
+    puts "photo: #{to_img(artwork)}"
+    puts "date: #{artwork.date}"
+    puts "medium: #{artwork.medium}"
+    puts "category: #{artwork.category}"
   end
 end
 
 puts "created #{Artwork.count} artworks"
+
+
+
+
+
+
