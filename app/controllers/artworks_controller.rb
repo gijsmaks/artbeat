@@ -18,6 +18,7 @@ class ArtworksController < ApplicationController
     @tags = get_tags
     @comments = @artwork.comments
     @comment = Comment.new
+    @saved_artwork = SavedArtwork.new
   end
 
   def new
