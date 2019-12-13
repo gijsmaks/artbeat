@@ -30,25 +30,25 @@
 </div>
 <div class="all-screen">
   <div class="save-modal">
-    <h3>In which collection would you like to save "<%= artwork.title %>"?</h3>
+    <h3 class="which-collection">In which collection would you like to save "<%= artwork.title %>"?</h3>
     <div>
       <% @tags.each do |tag| %>
         <%= link_to artwork_saved_artworks_path(artwork, {saved_artwork: {tag: tag}}), method: :post do %>
-          <div class="d-flex">
+          <div class="collection-thumb d-flex">
             <div class="collection-image"><%= image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
-            <div>
-              <%= tag %>
+            <div class="collection-tag-link">
+              <p><%= tag %></p>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
 
-    <h3>New collection</h3>
+    <h3 class="new-collection">New collection</h3>
     <div class="new-collection-form">
       <%= simple_form_for @saved_artwork, url: artwork_saved_artworks_path(artwork) do |f| %>
-        <%= f.input :tag, label: false, placeholder: "Please name your new collection" %>
-        <%= f.submit "Create" %>
+        <%= f.input :tag, label: false, placeholder: "New collection name" %>
+        <%= f.submit "Create Collection", class: "btn-flat new-comment-btn" %>
       <% end %>
     </div>
   </div>
