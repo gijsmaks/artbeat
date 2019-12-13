@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :artworks, only: [:index, :show] do
     resources :comments, except: [:show, :destroy]
     resources :favorites, only: [:create]
+    resources :saved_artworks, only: [:new, :create]
   end
 
   resources :comments, only: [:destroy, :edit, :update]
