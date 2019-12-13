@@ -24,7 +24,12 @@
   </div>
 
   <div class="details-body">
-    <p class="description"> <%= artwork.description %></p>
+    <div class="description">
+      <p><%= artwork.date_of_creation %> </p>
+      <p><%= artwork.viewing_location.name %></p>
+      <p> This <%= artwork.category.downcase %> is <%= artwork.medium.downcase %> </p>
+    </div>
+
   </div>
 
 </div>
