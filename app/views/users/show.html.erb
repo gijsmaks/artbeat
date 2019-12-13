@@ -1,25 +1,27 @@
-<h2><%= current_user.username %></h2>
-<h3><%= current_user.email %></h3>
+<div class="container">
+  <h3><%= current_user.username %></h3>
+  <p><%= current_user.email %></p>
 
-<div class="favorites">
-  <h2>Favorites</h2>
-  <div class="card-columns">
-      <% @favorites.each do |favorite| %>
-        <%= link_to artwork_path(favorite) do %>
-          <%= render 'artworks/card-artwork', artwork: favorite.artwork %>
+  <div class="favorites">
+    <h3>Favorites</h3>
+    <div class="card-columns">
+        <% @favorites.each do |favorite| %>
+          <%= link_to artwork_path(favorite) do %>
+            <%= render 'artworks/card-artwork', artwork: favorite.artwork %>
+          <% end %>
         <% end %>
-      <% end %>
-  </div>
-</div>
-
-<div class="collections">
-  <h2>Collections</h2>
-  <% @tags.each do |tag| %>
-    <div class="d-flex">
-      <div class="collection-image"><%= image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
-      <div>
-        <%= tag %>
-      </div>
     </div>
-  <% end %>
+  </div>
+
+  <div class="collections mt-3">
+    <h3>Collections</h3>
+    <% @tags.each do |tag| %>
+      <div class="d-flex m-3">
+        <div class="collection-image"><%= image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
+        <div>
+          <%= tag %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
