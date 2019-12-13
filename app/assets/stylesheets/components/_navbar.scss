@@ -28,14 +28,17 @@
 .navbar-icon {
   line-height: 30px;
   text-align: center;
+      font-size: 20px;
   .navbar-toggler-icon {
     vertical-align: middle;
     display: inline-block;
+
   }
 }
 
 .logo {
   line-height: 40px;
+  margin-right: -22px;
   a {
     font-family: Baskerville !important;
     color: black;
@@ -56,3 +59,23 @@
     vertical-align: middle;
   }
 }
+
+.logo img {
+  width: 58%;
+  vertical-align: middle;
+  margin: 0;
+  margin-right: -50px;
+  margin-bottom: 6px;
+}
+
+
+.fas {
+  font-size: 18px;
+}
+
+
+
+
+
+
+
