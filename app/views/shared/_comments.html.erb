@@ -18,8 +18,8 @@
 <div class="comment-input">
 <%= simple_form_for [ @artwork, @comment] do |f| %>
   <%= f.error_notification %>
-  <%= f.input :content %>
-   <%= f.button :submit, class: "btn-flat" %>
+  <%= f.input :content, label: false, placeholder: "New comment..." %>
+   <%= f.button :submit, class: "btn-flat new-comment-btn" %>
 <% end %>
 </div>
 </div>
