@@ -95,15 +95,12 @@ def to_img(api_data)
   end
   array.join('.')
 end
-  category_arry = ["Painting", "Photography", "Prints", "Work on Paper", "Drawing"]
+
+category_arry = ["Painting", "Photography", "Prints", "Work on Paper", "Drawing"]
 
 artworks.each do |artwork|
-  p artwork.date.to_i
-
 
 if !artwork.collecting_institution.nil? && !artwork.date.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.collecting_institution.nil? && !artwork.medium.nil? && category_arry.include?(artwork.category)
-
-    # p artwork
 
     viewing_location = ViewingLocation.create!(name: artwork.collecting_institution)
     artist = Artist.create!(name: artwork._links.artists.first.name, bio: artwork._links.artists.first.biography)
@@ -116,6 +113,7 @@ if !artwork.collecting_institution.nil? && !artwork.date.nil? && !artwork._links
       date_of_creation: artwork.date,
       medium: artwork.medium,
       category: artwork.category,
+      related_artworks: artwork._links.similar_artworks,
     )
 
     puts "title: #{new_artwork.title}"
@@ -125,6 +123,7 @@ if !artwork.collecting_institution.nil? && !artwork.date.nil? && !artwork._links
     puts "date: #{artwork.date}"
     puts "medium: #{artwork.medium}"
     puts "category: #{artwork.category}"
+    puts "related artists: #{artwork._links.similar_artworks}"
   end
 end
 
