@@ -1,8 +1,4 @@
 class SavedArtworksController < ApplicationController
-  def new
-    @saved_artwork = SavedArtwork.new
-  end
-
   def create
     @artwork = Artwork.find(params[:artwork_id])
     @saved_artwork = SavedArtwork.new(saved_artwork_params)

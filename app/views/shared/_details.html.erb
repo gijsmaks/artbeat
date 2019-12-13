@@ -23,8 +23,6 @@
     </div>
   </div>
 
-
-
   <div class="details-body">
     <p class="description"> <%= artwork.description %></p>
   </div>
@@ -45,13 +43,13 @@
         <% end %>
       <% end %>
     </div>
-    <%#= link_to "", new_artwork_saved_artwork  %>
-    <h3>New collection</h3>
-    <div class="new-save-modal">
-      <%# simple_form_for @saved_artwork do |f| %>
 
-        <%#= f.button :submit %>
-      <%# end %>
+    <h3>New collection</h3>
+    <div class="new-collection-form">
+      <%= simple_form_for @saved_artwork, url: artwork_saved_artworks_path(artwork) do |f| %>
+        <%= f.input :tag, label: false, placeholder: "Please name your new collection" %>
+        <%= f.submit "Create" %>
+      <% end %>
     </div>
   </div>
 </div>
