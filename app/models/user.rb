@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :saved_artworks
+  has_many :saved_artworks, dependent: :destroy
 
   def favorited?(artwork)
     favorites.find_by(artwork_id: artwork.id)

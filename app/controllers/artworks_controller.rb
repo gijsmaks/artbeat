@@ -30,9 +30,9 @@ class ArtworksController < ApplicationController
     # TODO
   end
 
-  def update
-    # TODO
-  end
+  # def update
+  #   # TODO
+  # end
 
   # def destroy
   #   id = params[:id]

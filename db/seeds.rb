@@ -10,6 +10,7 @@ Artwork.destroy_all
 ViewingLocation.destroy_all
 Artist.destroy_all
 User.destroy_all
+SavedArtwork.destroy_all
 
 # Test
 
@@ -95,25 +96,24 @@ def to_img(api_data)
 end
 
 artworks.each do |artwork|
-if !artwork.collecting_institution.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.date.nil?
+  if !artwork.collecting_institution.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.date.nil?
 
-paris_save = SavedArtwork.create(user: ben, artwork: beret, tag: "Paris")
+    # p artwork
 
-  # p artwork
+    viewing_location = ViewingLocation.create!(name: artwork.collecting_institution)
+    artist = Artist.create!(name: artwork._links.artists.first.name, bio: artwork._links.artists.first.biography)
 
-  viewing_location = ViewingLocation.create!(name: artwork.collecting_institution)
+    new_artwork = Artwork.create!(
+      title: artwork.title,
+      viewing_location: viewing_location,
+      artist: artist,
+      photo: to_img(artwork),
+      date_of_creation: artwork.date,
+      description: artwork.medium,
+    )
 
-  new_artwork = Artwork.create!(
-    title: artwork.title,
-    viewing_location: viewing_location,
-    artist: artist,
-    photo: to_img(artwork),
-    date_of_creation: artwork.date,
-    description: artwork.medium,
-  )
-
-  puts "title: #{new_artwork.title} - name: #{artist.name} - location: #{viewing_location.name} - date: #{artwork.date} - url: #{to_img(artwork)} - medium: #{artwork.medium}"
-end
+    puts "title: #{new_artwork.title} - name: #{artist.name} - location: #{viewing_location.name} - date: #{artwork.date} - url: #{to_img(artwork)} - medium: #{artwork.medium}"
+  end
 end
 
 puts "created #{Artwork.count} artworks"
