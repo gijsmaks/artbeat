@@ -1,5 +1,5 @@
 const generateSaveModal = (event) => {
-  const bookmark = document.querySelector(".fa-bookmark");
+  const bookmark = document.querySelector(".fa-heart");
   const modal = document.querySelector(".all-screen");
 
   bookmark.addEventListener("click", (event) => {
