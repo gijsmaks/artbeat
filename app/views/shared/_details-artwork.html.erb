@@ -6,19 +6,10 @@
       <div class="artist-name"><%= artwork.artist.name %></div>
     </div>
     <div class="fave-save">
-      <% if current_user.favorited?(artwork) %>
-        <%= link_to favorite_path, method: :delete do %>
-          <div class="fave-save-icon"><i class="fas fa-heart" style="color: #F85961"></i></div>
-        <% end %>
-      <% else %>
-        <%= link_to artwork_favorites_path(artwork), method: :post do %>
-          <div class="fave-save-icon"><i class="far fa-heart" style="color: black"></i></div>
-        <% end %>
-      <% end %>
       <% if current_user.saved?(artwork) %>
-          <div class="fave-save-icon"><i class="fas fa-bookmark" style="color: #F85961"></i></div>
+          <div class="fave-save-icon"><i class="fas fa-heart" style="color: #F85961"></i></div>
       <% else %>
-          <div class="fave-save-icon"><i class="far fa-bookmark" style="color: black"></i></div>
+          <div class="fave-save-icon"><i class="far fa-heart" style="color: black"></i></div>
       <% end %>
     </div>
   </div>

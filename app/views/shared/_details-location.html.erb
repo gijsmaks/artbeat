@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="details-head">
+    <div class="headings">
+      <div class="art-title"><%= @viewing_location.name %></div>
+      <div class="artist-name"><%= @viewing_location.address %></div>
+    </div>
+    <div class="fave-save">
+      <% if current_user.saved?(@viewing_location) %>
+          <div class="fave-save-icon"><i class="fas fa-heart" style="color: #F85961"></i></div>
+      <% else %>
+          <div class="fave-save-icon"><i class="far fa-heart" style="color: black"></i></div>
+      <% end %>
+    </div>
+  </div>
+
+<!--   <div class="details-body">
+    <div class="description">
+      <p><%#= artwork.date_of_creation %> </p>
+      <p><%#= artwork.viewing_location.name %></p>
+    </div>
+  </div> -->
+
+</div>
+
