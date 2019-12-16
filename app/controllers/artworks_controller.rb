@@ -1,6 +1,6 @@
 class ArtworksController < ApplicationController
   def index
-    @artworks = Artwork.all
+    # @artworks = Artwork.all
     # return unless params[:search]
     # return unless params[:search][:location]
     # @location = ViewingLocation.find_by(name: params[:search][:location])
@@ -11,6 +11,15 @@ class ArtworksController < ApplicationController
     else
       @artworks = Artwork.all
     end
+    # Create markers here
+
+    @markers = @artworks.map do |artwork|
+      {
+        lat: artwork.viewing_location.latitude,
+        lng: artwork.viewing_location.longitude
+      }
+    end
+
   end
 
   def show
