@@ -2,10 +2,12 @@ const generateSaveModal = (event) => {
   const bookmark = document.querySelector(".fa-heart");
   const modal = document.querySelector(".all-screen");
 
-  bookmark.addEventListener("click", (event) => {
-    modal.style.display = "block";
-    destroySaveModal()
-  });
+  if (bookmark) {
+    bookmark.addEventListener("click", (event) => {
+      modal.style.display = "block";
+      destroySaveModal()
+    });
+  }
 };
 
 const destroySaveModal = (event) => {

@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Favorite.destroy_all
 Artwork.destroy_all
 ViewingLocation.destroy_all
 Artist.destroy_all
@@ -29,8 +29,7 @@ christos = User.create(username: 'Christos', email: 'christos@gmail.com', passwo
 # leonardo = Artist.create(name: "Leonardo da Vinci", bio: "Old artist")
 
 # #location
-# le_louvre = ViewingLocation.create(name: "Le Louvre", address: "Paris")
-
+# le_louvre = ViewingLocation.create
 # # artwork
 # monalisa = Artwork.create!(viewing_location: le_louvre, title: 'Mona Lisa', artist: leonardo, photo: URI('https://images.unsplash.com/photo-1523554888454-84137e72c3ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80'), date_of_creation: '12/9/19', description: 'awesome')
 # soup = Artwork.create!(viewing_location: le_louvre, title: 'Tomato beef noudle', artist: warhol, photo: URI("https://images.unsplash.com/photo-1541680670548-88e8cd23c0f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"), date_of_creation: '13/9/19', description: 'very good')

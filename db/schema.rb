@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 2019_12_16_111231) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   add_foreign_key "artwork_categories", "artworks"
