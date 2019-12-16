@@ -96,11 +96,13 @@ def to_img(api_data)
   array.join('.')
 end
 
-category_arry = ["Painting", "Photography", "Prints", "Work on Paper", "Drawing"]
+# category_arry = ["Painting", "Photography", "Prints", "Work on Paper", "Drawing"]
+
+location_bcn = ["bd-barcelona-design", "l-and-b-gallery", "sala-pares", "artevistas-gallery", "haimney"]
 
 artworks.each do |artwork|
 
-if !artwork.collecting_institution.nil? && !artwork.date.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.collecting_institution.nil? && !artwork.medium.nil? && category_arry.include?(artwork.category)
+if !artwork.title.nil? && location_bcn.include?(viewing_location) && !artwork._links.artists.first.nil? && !to_img(artwork).nil? && !artwork.date.nil? && !artwork.medium.nil? && !artwork.category.nil?
 
     viewing_location = ViewingLocation.create!(name: artwork.collecting_institution)
     artist = Artist.create!(name: artwork._links.artists.first.name, bio: artwork._links.artists.first.biography)
@@ -113,7 +115,7 @@ if !artwork.collecting_institution.nil? && !artwork.date.nil? && !artwork._links
       date_of_creation: artwork.date,
       medium: artwork.medium,
       category: artwork.category,
-      related_artworks: artwork._links.similar_artworks,
+      # related_artworks: artwork._links.similar_artworks,
     )
 
     puts "title: #{new_artwork.title}"
@@ -123,7 +125,7 @@ if !artwork.collecting_institution.nil? && !artwork.date.nil? && !artwork._links
     puts "date: #{artwork.date}"
     puts "medium: #{artwork.medium}"
     puts "category: #{artwork.category}"
-    puts "related artists: #{artwork._links.similar_artworks}"
+    # puts "related artists: #{artwork._links.similar_artworks}"
   end
 end
 
