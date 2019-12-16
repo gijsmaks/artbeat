@@ -8,8 +8,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :saved_artworks, dependent: :destroy
 
-  def favorited?(artwork)
-    favorites.find_by(artwork_id: artwork.id)
+  after_create :add_favorites_to_user
+
+  def favorited?(viewing_location)
+    favorites.find_by(viewing_location_id: viewing_location.id)
   end
 
   def saved?(artwork)
@@ -18,5 +20,12 @@ class User < ApplicationRecord
 
   def saved_artworks_for(tag)
     saved_artworks.where(tag: tag).map(&:artwork)
+  end
+
+  private
+
+  def add_favorites_to_user
+    favorites = SavedArtwork.new(user_id: self.id, tag: "Favorites")
+    favorites.save(validate: false)
   end
 end
