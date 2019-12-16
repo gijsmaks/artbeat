@@ -1,15 +1,5 @@
 <%= render 'shared/banner' %>
 
-<div class="container">
-<%= render 'shared/search' %>
-  <div class="card-columns">
-      <% @artworks.each do |art| %>
-        <%= link_to artwork_path(art) do %>
-          <%= render 'artworks/card-artwork', artwork: art %>
-        <% end %>
-      <% end %>
-  </div>
-</div>
 
 
 
