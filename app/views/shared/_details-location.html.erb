@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="details-head">
+    <div class="headings">
+      <div class="art-title"><%= @viewing_location.name %></div>
+      <div class="artist-name"><%= @viewing_location.address %></div>
+    </div>
+    <div class="fave-save">
+      <% if current_user.favorited?(@viewing_location) %>
+        <%= link_to favorite_path, method: :delete do%>
+          <div class="fave-save-icon"><i class="fas fa-heart" style="color: #F85961"></i></div>
+        <% end %>
+      <% else %>
+        <%= link_to viewing_location_favorites_path(@viewing_location), method: :post do%>
+          <div class="fave-save-icon"><i class="far fa-heart" style="color: black"></i></div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

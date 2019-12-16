@@ -66,11 +66,11 @@ ActiveRecord::Schema.define(version: 2019_12_16_212846) do
 
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "artwork_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artwork_id"], name: "index_favorites_on_artwork_id"
+    t.bigint "viewing_location_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+    t.index ["viewing_location_id"], name: "index_favorites_on_viewing_location_id"
   end
 
   create_table "saved_artworks", force: :cascade do |t|
@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(version: 2019_12_16_212846) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   add_foreign_key "artwork_categories", "artworks"
@@ -113,8 +115,8 @@ ActiveRecord::Schema.define(version: 2019_12_16_212846) do
   add_foreign_key "artworks", "viewing_locations"
   add_foreign_key "comments", "artworks"
   add_foreign_key "comments", "users"
-  add_foreign_key "favorites", "artworks"
   add_foreign_key "favorites", "users"
+  add_foreign_key "favorites", "viewing_locations"
   add_foreign_key "saved_artworks", "artworks"
   add_foreign_key "saved_artworks", "users"
 end

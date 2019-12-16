@@ -4,16 +4,16 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @artwork = Artwork.find(params[:artwork_id])
-    @favorite = Favorite.new(user_id: current_user.id, artwork_id: params[:artwork_id])
+    @viewing_location = ViewingLocation.find(params[:viewing_location_id])
+    @favorite = Favorite.new(user: current_user, viewing_location: @viewing_location)
     @favorite.save
-    redirect_to artwork_path(@artwork)
+    redirect_to viewing_location_path(@viewing_location)
   end
 
   def destroy
-    @artwork = Artwork.find(params[:id])
-    @favorite = Favorite.find_by(user_id: current_user, artwork_id: @artwork)
+    @viewing_location = ViewingLocation.find(params[:id])
+    @favorite = Favorite.find_by(user: current_user, viewing_location: @viewing_location)
     @favorite.destroy
-    redirect_to artwork_path(@artwork)
+    redirect_to viewing_location_path(@viewing_location)
   end
 end
