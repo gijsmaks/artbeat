@@ -2,24 +2,27 @@
   <h3><%= current_user.username %></h3>
   <p><%= current_user.email %></p>
 
-  <div class="favorites">
-    <h3>Favorites</h3>
-    <div class="card-columns">
-        <% @favorites.each do |favorite| %>
-          <%= link_to artwork_path(favorite) do %>
-            <%#= render 'artworks/card-artwork', artwork: favorite.artwork %>
-          <% end %>
-        <% end %>
-    </div>
-  </div>
-
   <div class="collections mt-3">
     <h3>Collections</h3>
     <% @tags.each do |tag| %>
       <div class="d-flex m-3">
-        <div class="collection-image"><%= image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
+        <% if current_user.saved_artworks.last.artwork_id %>
+          <div class="collection-image"><%= image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
+        <% else %>
+          <div><i class="fas fa-palette"></i></div>
+        <% end %>
         <div>
           <%= tag %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="saved-viewing-locations mt-3">
+    <h3>Saved Galleries</h3>
+    <% current_user.favorites.each do |location| %>
+      <div class="d-flex m-3">
+        <div>
+          <%= location.viewing_location.name %>
         </div>
       </div>
     <% end %>
