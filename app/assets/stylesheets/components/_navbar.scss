@@ -1,21 +1,16 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
 
 .navbar {
   border-bottom-style: solid;
   border-bottom-width: 0.2px;
   border-bottom-color: #e6e6e6;
   line-height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
+  z-index:1;
+  height: 60px;
 }
 
 .navbar-light .navbar-toggler {
