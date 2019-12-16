@@ -63,27 +63,79 @@ require 'net/http'
 require 'json'
 require 'open-uri'
 
-client_id = 'f0f4621cb4d96bb56038'
-client_secret = '5eb9618233d99e41a420164f13ceeb44'
+def build_api_client(url)
+  client_id = 'f0f4621cb4d96bb56038'
+  client_secret = '5eb9618233d99e41a420164f13ceeb44'
 
-api_url = URI.parse('https://api.artsy.net/api/tokens/xapp_token')
-response = Net::HTTP.post_form(api_url, client_id: client_id, client_secret: client_secret)
-xapp_token = JSON.parse(response.body)['token']
+  api_url = URI.parse('https://api.artsy.net/api/tokens/xapp_token')
+  response = Net::HTTP.post_form(api_url, client_id: client_id, client_secret: client_secret)
+  xapp_token = JSON.parse(response.body)['token']
 
-api = Hyperclient.new('https://api.artsy.net/api') do |api|
-  api.headers['Accept'] = 'application/vnd.artsy-v2+json'
-  api.headers['X-Xapp-Token'] = xapp_token
-  api.connection(default: false) do |conn|
-    conn.use FaradayMiddleware::FollowRedirects
-    conn.use Faraday::Response::RaiseError
-    conn.request :json
-    conn.response :json, content_type: /\bjson$/
-    conn.adapter :net_http
+  api = Hyperclient.new(url) do |api|
+    api.headers['Accept'] = 'application/vnd.artsy-v2+json'
+    api.headers['X-Xapp-Token'] = xapp_token
+    api.connection(default: false) do |conn|
+      conn.use FaradayMiddleware::FollowRedirects
+      conn.use Faraday::Response::RaiseError
+      conn.request :json
+      conn.response :json, content_type: /\bjson$/
+      conn.adapter :net_http
+    end
+  end
+end
+
+# 1. Search by name -> Get all shows. endpoint: /search(gallery_name: name)
+# In _response.body (find: type: show)
+# 2. Query artworks by show id! endpoint: /artworks(show_id: found_show_id)
+
+location_bcn = ["bd-barcelona-design", "l-and-b-gallery", "sala-pares", "artevistas-gallery", "haimney"]
+
+@shows = []
+@count = 0
+
+def extract_shows(api, location)
+  api._response.body['_embedded']['results'].each do |object|
+    if object['og_type'] == 'show'
+      @shows << object.merge!(gallery_name: location)
+    end
+  end
+  p @shows
+  @count += 1
+  if api._response.body['_links']['next'] && @count < 30
+    extract_shows(api._links.next, location)
+  end
+end
+
+location_bcn.each do |location|
+  @count = 0
+  url = "https://api.artsy.net/api/search?q=#{location}"
+
+  api = build_api_client(url)
+
+  extract_shows(api, location)
+end
+
+@shows = @shows.select do |show|
+  url = show['_links']['self']['href']
+  id = url.split("/").last
+  begin
+    api = build_api_client(url)
+    status = api._response.body['status']
+    if status != 'closed'
+      puts '########### GREAT SUCCESS ############# ITS OPEN #################'
+      show.merge!(id: id)
+      true
+    end
+  rescue
+    p '404 :('
+    false
   end
 end
 
 
-artworks = api.artworks(size: 100)
+haimney_show_id = '5de5268d0443970012bbb340'
+
+artworks = api.artworks(show_id: @shows.first)
 
 def to_img(api_data)
   string = api_data._links.image.to_s
@@ -98,13 +150,14 @@ end
 
 # category_arry = ["Painting", "Photography", "Prints", "Work on Paper", "Drawing"]
 
-location_bcn = ["bd-barcelona-design", "l-and-b-gallery", "sala-pares", "artevistas-gallery", "haimney"]
+# && location_bcn.include?(viewing_location)
+
 
 artworks.each do |artwork|
 
-if !artwork.title.nil? && location_bcn.include?(viewing_location) && !artwork._links.artists.first.nil? && !to_img(artwork).nil? && !artwork.date.nil? && !artwork.medium.nil? && !artwork.category.nil?
+if !artwork.title.nil? && !artwork._links.artists.first.nil? && !to_img(artwork).nil? && !artwork.date.nil? && !artwork.medium.nil? && !artwork.category.nil?
 
-    viewing_location = ViewingLocation.create!(name: artwork.collecting_institution)
+    viewing_location = ViewingLocation.create!(name: artwork.collecting_institution, address: artwork.collecting_institution)
     artist = Artist.create!(name: artwork._links.artists.first.name, bio: artwork._links.artists.first.biography)
 
     new_artwork = Artwork.create!(
@@ -130,9 +183,6 @@ if !artwork.title.nil? && location_bcn.include?(viewing_location) && !artwork._l
 end
 
 puts "created #{Artwork.count} artworks"
-
-
-
 
 
 
