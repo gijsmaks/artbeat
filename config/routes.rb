@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'viewing_locations/show'
   get 'users/show'
   devise_for :users
   root to: 'pages#home'
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   resources :comments, only: [:destroy, :edit, :update]
   resources :favorites, only: [:index, :destroy]
   resources :users, only: [:show]
+  resources :viewing_locations, only: [:show]
 end
