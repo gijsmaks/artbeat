@@ -3,6 +3,7 @@ ruby '2.6.3'
 
 gem 'faker'
 gem 'pg_search'
+gem 'geocoder'
 
 gem 'bootsnap', require: false
 gem 'devise'
