@@ -71,6 +71,7 @@
   background-color: white;
   width: 100px;
   color:black;
+
 }
 
 .nav-link {
@@ -84,4 +85,11 @@
 
 .bg-light {
   background-color: white !important;
+}
+
+.nav-item-log-in-out{
+  width: 100px;
+  background-color: white !important;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
