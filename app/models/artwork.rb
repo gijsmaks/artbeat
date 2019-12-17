@@ -12,7 +12,7 @@ class Artwork < ApplicationRecord
     against: [:title, :description],
     associated_against: {
       artist: [:name],
-      viewing_location: [:name]
+      viewing_location: [:name, :address]
     },
     using: {
       tsearch: { prefix: true }
