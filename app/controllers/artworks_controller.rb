@@ -12,7 +12,7 @@ class ArtworksController < ApplicationController
       @artworks = Artwork.all
     end
     # Create markers here
-    viewing_locations = @artworks.map {|artwork| artwork.viewing_location}.uniq
+    viewing_locations = @artworks.map { |artwork| artwork.viewing_location }.uniq
     @markers = viewing_locations.map do |viewing_location|
       {
         lat: viewing_location.latitude,
@@ -20,7 +20,6 @@ class ArtworksController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { viewing_location: viewing_location })
       }
     end
-
   end
 
   def show
