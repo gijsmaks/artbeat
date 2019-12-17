@@ -31,9 +31,12 @@ class ArtworksController < ApplicationController
   end
 
   def new
+    @artwork = Artwork.new
   end
 
   def create
+    @artwork = Artwork.new(artwork_params)
+    @artwork.save
   end
 
   def edit
@@ -63,5 +66,9 @@ class ArtworksController < ApplicationController
 
   def set_comment
     @comment = Comment.find(params[:id])
+  end
+
+  def artwork_params
+    params.require(:artwork).permit(:photo)
   end
 end
