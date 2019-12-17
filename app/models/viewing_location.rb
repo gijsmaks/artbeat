@@ -3,9 +3,9 @@ class ViewingLocation < ApplicationRecord
 
   geocoded_by :name
   after_validation :geocode, if: :will_save_change_to_name?
-  after_save :destroy_if_no_location
+  # after_save :destroy_if_no_location
 
-  def destroy_if_no_location
-    destroy if latitude.nil?
-  end
+  # def destroy_if_no_location
+  #   destroy if latitude.nil?
+  # end
 end

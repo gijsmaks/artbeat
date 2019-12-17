@@ -98,9 +98,7 @@ end
 category_arry = ["Painting", "Photography", "Prints", "Work on Paper", "Drawing"]
 
 artworks.each do |artwork|
-
 if !artwork.collecting_institution.nil? && !artwork.date.nil? && !artwork._links.artists.first.nil? && !artwork.title.nil? && !artwork.collecting_institution.nil? && !artwork.medium.nil? && category_arry.include?(artwork.category)
-
     viewing_location = ViewingLocation.create!(name: artwork.collecting_institution)
     artist = Artist.create!(name: artwork._links.artists.first.name, bio: artwork._links.artists.first.biography)
 
