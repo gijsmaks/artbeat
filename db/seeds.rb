@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Comment.destroy_all
-Favorite.destroy_all
+# Comment.destroy_all
 Artwork.destroy_all
+Favorite.destroy_all
+SavedArtwork.destroy_all
 ViewingLocation.destroy_all
 Artist.destroy_all
 User.destroy_all
-SavedArtwork.destroy_all
 
 
 ######### user ############
@@ -26,15 +26,19 @@ christos = User.create(username: 'Christos', email: 'christos@gmail.com', passwo
 ############## location/ gallery ################
 clearing_aero = ViewingLocation.create(
   name: "Clearing Aero",
-  address: "Carrer de Còrsega, 467, Barcelona",
+  address: "Carrer de Corsega, 467, Barcelona",
   description: "Clearing Aero's penchant for new streetart and film is sculpted into subtle, provocative and highly original shows. Limited-edition artists' texts, detailed explanations in English and Silvia's own bilingual talents complement the exhibitions. You'll enter intrigued, but emerge informed"
   )
 
+sleep(2)
+
 rooted = ViewingLocation.create(
   name: "Rooted",
-  address: "Carrer de Sant Antoni Maria Claret, 152, Barcelona",
+  address: "Carrer de Corsega, 1, Barcelona",
   description: "Rooted Gallery galleries of Barcelona and Madrid work in cahoots to coordinate and organise exhibitions of the artists they represent in other galleries and private and public institutions. Rooted Gallery family of galleries was founded in London in 1946 and won prestige in the 1950s for being the first gallery to show the German Expressionists in London. By 1958 Clearing Below Gallery was representing such artists as Oskar Kokoschka, Henry Moore, Francis Bacon, Victor Pasmore and Lucian Freud."
   )
+
+sleep(2)
 
 young_steps = ViewingLocation.create(
   name: "Young Steps",
@@ -42,19 +46,23 @@ young_steps = ViewingLocation.create(
   description: "Young Steps Arts started out with the aim of creating a hybrid platform between commercial mediation and cultural contribution to disseminate current artistic trends. The gallery focuses on projects that reflect contextual dynamics, and artists working in the socio-political realm, such as Eugenio Merino, Núria Güell, the collective known as Democracia, and Carlos Aires, among others."
   )
 
+sleep(2)
+
 locust_focus = ViewingLocation.create(
   name: "Locust Focus",
-  address: "Carrer de Còrsega, 410, Barcelona",
+  address: "Carrer de Budapest, 2, Barcelona",
   description: "Ever since its inception in 1976, Locust Focus Gallery has been part of art fairs Arco, Art Basel and Art Basel-Miami Beach. The gallery was one of the city's pioneers in contemporary art and continues to promote the various forms these artists use to express themselves."
   )
 
+sleep(2)
+
 nuu_clearing = ViewingLocation.create(
-  name: "Carrer de la Granja, 20, Barcelona",
-  address: "Ptge. Mercader, 8 Eixample Barcelona 08008",
+  name: "Nuu Clearing",
+  address: "Carrer de la Granja, 20, Barcelona",
   description: "The gallery of Nuu Clearing opened its doors in 2005. A veteran art lover who in the past had a foothold in the world of entertainment. In this gallery, art pieces are mixed with unconventional objects and furniture. They represent artists such as Antoni Llena, Joan Miró, Luis Marsans, Hernández Pijuan and Saul Steinberet, among others."
   )
 
-
+ViewingLocation.where(latitude: nil).delete_all
 
 ####### artist #############
 franco_fasoli = Artist.create(
@@ -129,13 +137,9 @@ jerome_mesnager = Artist.create(
   photo: URI('https://d2jv9003bew7ag.cloudfront.net/uploads/Jerome-Mesnager-profile-555x312.jpg')
   )
 
-
-
-
-
 ############ artwork ################
 sin_titulo_6 = Artwork.create!(
-  viewing_location: clearing_aero,
+  viewing_location: locust_focus,
   title: 'Sin Titulo 6',
   artist: franco_fasoli,
   photo: URI('https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/353770_1_m.jpg'),
@@ -146,7 +150,7 @@ sin_titulo_6 = Artwork.create!(
   )
 
 sin_titulo = Artwork.create!(
-  viewing_location: clearing_aero,
+  viewing_location: locust_focus,
   title: "Sin Titulo",
   artist: franco_fasoli,
   photo: URI("https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/353794_1_m.jpg"),
@@ -157,7 +161,7 @@ sin_titulo = Artwork.create!(
   )
 
 vincul_4 = Artwork.create!(
-  viewing_location: clearing_aero,
+  viewing_location: locust_focus,
   title: "Vinculo #4",
   artist: franco_fasoli,
   photo: URI("https://d2jv9003bew7ag.cloudfront.net/business/server/php/files/3238/341617428_1443640181.jpg"),
@@ -168,7 +172,7 @@ vincul_4 = Artwork.create!(
   )
 
 hip_hop_cactus = Artwork.create!(
-  viewing_location: clearing_aero,
+  viewing_location: locust_focus,
   title: "Hip Hop Cactus",
   artist: depose,
   photo: URI("https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/507698_1_m.jpg"),
@@ -179,7 +183,7 @@ hip_hop_cactus = Artwork.create!(
   )
 
 stone_heart_nb = Artwork.create!(
-  viewing_location: clearing_aero,
+  viewing_location: locust_focus,
   title: "Stone Heart N&B",
   artist: depose,
   photo: URI("https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/502697_1_m.jpg"),
@@ -190,7 +194,7 @@ stone_heart_nb = Artwork.create!(
   )
 
 phm = Artwork.create!(
-  viewing_location: clearing_aero,
+  viewing_location: locust_focus,
   title: "phm",
   artist: depose,
   photo: URI("https://streetart.photo/photos/large/8f/1d/8f1d9f13-134e-4a7f-a889-4b44cc06fcbe.jpg"),
@@ -201,7 +205,7 @@ phm = Artwork.create!(
   )
 
 mister_balloon_man = Artwork.create!(
-  viewing_location: clearing_aero,
+  viewing_location: rooted,
   title: "Mister Balloon Man",
   artist: mist,
   photo: URI("https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/559690_1_m.jpg"),
@@ -212,7 +216,7 @@ mister_balloon_man = Artwork.create!(
   )
 
 crop_circle_iii = Artwork.create!(
-  viewing_location: clearing_aero,
+  viewing_location: rooted,
   title: "Crop Circle III",
   artist: mist,
   photo: URI("https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/599361_1_m.jpg"),
@@ -223,7 +227,7 @@ crop_circle_iii = Artwork.create!(
   )
 
 sans_titre = Artwork.create!(
-  viewing_location: clearing_aero,
+  viewing_location: rooted,
   title: "Sans titre",
   artist: mist,
   photo: URI("https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/190690_1_m.jpg"),
@@ -267,7 +271,7 @@ accomplish_through_stealth = Artwork.create!(
   )
 
 appoline = Artwork.create!(
-  viewing_location: rooted,
+  viewing_location: locust_focus,
   title: "Appoline",
   artist: francoise_nielly,
   photo: URI("https://static.wixstatic.com/media/29f7e0_d70f8bae2e2e4bfebc7aab621e50a91f~mv2_d_2871_2863_s_4_2.jpg/v1/fill/w_1249,h_1246,al_c,q_90,usm_0.66_1.00_0.01/29f7e0_d70f8bae2e2e4bfebc7aab621e50a91f~mv2_d_2871_2863_s_4_2.webp"),
@@ -278,7 +282,7 @@ appoline = Artwork.create!(
   )
 
 angelo = Artwork.create!(
-  viewing_location: rooted,
+  viewing_location: locust_focus,
   title: "Angelo",
   artist: francoise_nielly,
   photo: URI("https://www.galeries-bartoux.com/wp-content/uploads/2019/12/NIELLY-110X110-ANGELO-galeriesbartoux.jpg"),
@@ -355,7 +359,7 @@ dawn = Artwork.create!(
   )
 
 plage_107 = Artwork.create!(
-  viewing_location: locust_focus,
+  viewing_location: clearing_aero,
   title: "Plage 107",
   artist: marc_harrold,
   photo: URI("https://static.wixstatic.com/media/29f7e0_5ebc79262b424ad78e81c07aeac2b1e9~mv2_d_2881_1305_s_2.jpg/v1/fill/w_2676,h_1212,al_c,q_90,usm_0.66_1.00_0.01/29f7e0_5ebc79262b424ad78e81c07aeac2b1e9~mv2_d_2881_1305_s_2.webp"),
@@ -366,7 +370,7 @@ plage_107 = Artwork.create!(
   )
 
 plage_100 = Artwork.create!(
-  viewing_location: locust_focus,
+  viewing_location: clearing_aero,
   title: "Plage 100",
   artist: marc_harrold,
   photo: URI("https://static.wixstatic.com/media/29f7e0_eddc029837c0469db5f5473855cf5b4f~mv2_d_11575_5276_s_4_2.jpg/v1/fill/w_2659,h_1212,al_c,q_90,usm_0.66_1.00_0.01/29f7e0_eddc029837c0469db5f5473855cf5b4f~mv2_d_11575_5276_s_4_2.webp"),
@@ -377,7 +381,7 @@ plage_100 = Artwork.create!(
   )
 
 a_drop_of_red = Artwork.create!(
-  viewing_location: locust_focus,
+  viewing_location: rooted,
   title: "A Drop of Red",
   artist: miles_aldridge,
   photo: URI("https://huxleyparlour.com/app/uploads/2018/11/a-drop-of-red-2-2001-by-miles-aldridge-BHC3343.jpg"),
@@ -388,7 +392,7 @@ a_drop_of_red = Artwork.create!(
   )
 
 i_only_want_you_to_love_me = Artwork.create!(
-  viewing_location: locust_focus,
+  viewing_location: rooted,
   title: "I Only Want You To Love Me",
   artist: miles_aldridge,
   photo: URI("https://huxleyparlour.com/app/uploads/2018/11/i-only-want-you-to-love-me-1-2011-by-miles-aldridge-BHC3344.jpg"),
@@ -441,7 +445,6 @@ no_58 = Artwork.create!(
   medium: "Painting aerosol paint, acrylic",
   category: "Street art"
   )
-
 
 puts "#{Comment.count} comments (0)"
 puts "#{Artwork.count} artworks (28)"
