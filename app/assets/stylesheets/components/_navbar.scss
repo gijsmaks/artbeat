@@ -1,6 +1,6 @@
-
 .navbar {
-  padding:0px;
+  padding: 0px;
+  z-index: 2;
 }
 
 .navbar-light .navbar-toggler {
@@ -21,7 +21,7 @@
 }
 
 .logo {
-  line-height: 40px;
+  line-height: 30px;
   margin-right: -22px;
   a {
     font-family: Baskerville !important;
@@ -49,7 +49,8 @@
   width: 38%;
   vertical-align: middle;
   margin-left: 20px;
-  margin-top: 16px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .fas {

@@ -1,5 +1,5 @@
 <div class="container">
-  <%= render 'shared/search' %>
+  <div id="index-search"><%= render 'shared/search' %></div>
   <% if @artworks.empty? %>
     <div>
       <h3>No results found for "<%= params[:search] %>"</h3>
