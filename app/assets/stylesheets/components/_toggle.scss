@@ -1,0 +1,34 @@
+.active {
+  border: none;
+  border-bottom: 2px solid #F75961;
+  background-color: white;
+
+
+  // &:focus {
+  //   border-bottom: 2px solid #F75961;
+  //   outline: none;
+  // }
+}
+
+.open-tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+#description {
+
+}
+
+#comment {
+  display: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.activity-btn {
+  width: 50%;
+  transition: border-bottom 0.5s ease;
+}
