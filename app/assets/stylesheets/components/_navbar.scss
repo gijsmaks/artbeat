@@ -93,7 +93,16 @@
   transition: top 0.3s;
   height: 60px;
   background-color: white;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-back {
+  font-size: 28px;
+  color: #7F7F7F;
+  margin-right: 12px;
+  &:focus {
+    color: #F95861;
+  }
 }
