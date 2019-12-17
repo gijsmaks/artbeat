@@ -55,3 +55,15 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+#index-search {
+  margin-top: -12px;
+  position: sticky;
+  top: 72px;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.scrolling-down {
+  transform: translateY(-70px);
+  transition: transform 0.3s;
+}

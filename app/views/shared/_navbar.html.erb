@@ -6,11 +6,11 @@
     <div class="logo">
       <%= link_to cl_image_tag("artbeat-logo.png"), root_path %>
     </div>
-    <div class="navbar-icon search-icon">
-      <%= link_to artworks_path do %>
-      <i class="fas fa-search" id="navbar-search"></i>
-      <% end %>
-    </div>
+    <% unless current_page?("/") %>
+      <div><%= link_to artworks_path, :class=>"btn-back" do%><i class="fas fa-chevron-left"></i><% end %></div>
+    <% else %>
+      <div style="width: 23.25px;"></div>
+    <% end %>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,4 +36,3 @@
     </ul>
   </div>
 </nav>
-

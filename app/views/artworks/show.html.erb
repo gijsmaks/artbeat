@@ -1,3 +1,17 @@
-<%= render 'shared/details-artwork', artwork: @artwork %>
-<%= render 'shared/comments', comments: @comments %>
-<%= cl_image_tag @artwork.photo, height: 300, width: 400, crop: :fill %>
+<%= render 'shared/details-artwork-banner', artwork: @artwork %>
+
+<div class="container">
+  <div class="open-tab-buttons">
+    <button class="activity-btn active" id="btn-left"> Description </button>
+    <button class="activity-btn" id="btn-right" > Comment </button>
+  </div>
+</div>
+
+<div id="content-right">
+  <%= render 'shared/comments', comments: @comments %>
+</div>
+
+<div id="content-left">
+  <%= render 'shared/details-artwork', artwork: @artwork %>
+</div>
+
