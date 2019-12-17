@@ -1,20 +1,10 @@
 
-
 .navbar {
-  border-bottom-style: solid;
-  border-bottom-width: 0.2px;
-  border-bottom-color: #e6e6e6;
-  line-height: 40px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  transition: top 0.3s;
-  z-index:1;
-  height: 60px;
-  background-color: white;
+  padding:0px;
 }
 
 .navbar-light .navbar-toggler {
+  padding:4px 8px;
   border-color: rgba(0, 0, 0, 0.0);
   .navbar-toggler-icon {
   }
@@ -27,7 +17,6 @@
   .navbar-toggler-icon {
     vertical-align: middle;
     display: inline-block;
-
   }
 }
 
@@ -48,6 +37,7 @@
   font-size: 22px;
   text-align: center;
   line-height: 30px;
+  margin-right: 8px;
   a {
     color: #777A68;
     display: inline-block;
@@ -58,10 +48,9 @@
 .logo img {
   width: 38%;
   vertical-align: middle;
-  margin: 0;
-  margin-bottom: 6px;
+  margin-left: 20px;
+  margin-top: 16px;
 }
-
 
 .fas {
   font-size: 18px;
@@ -69,13 +58,12 @@
 
 .nav-item {
   background-color: white;
-  width: 100px;
-  color:black;
+
 }
 
 .nav-link {
-    margin-left: 8px;
-
+    margin-left: 16px;
+    margin-bottom: 8px;
 }
 
 .avatar.dropdown-toggle {
@@ -84,4 +72,28 @@
 
 .bg-light {
   background-color: white !important;
+}
+
+.nav-item-log-in-out{
+  background-color: white !important;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.navbar-content {
+  padding: 6px;
+  border-bottom-style: solid;
+  border-bottom-width: 0.2px;
+  border-bottom-color: #e6e6e6;
+  line-height: 40px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
+  height: 60px;
+  background-color: white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
