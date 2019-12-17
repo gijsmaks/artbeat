@@ -54,3 +54,20 @@ img {
   width: 30px;
   height: 30px;
 }
+
+.artwork-thumbnail {
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  text-align: center;
+  top: 50%;
+  img {
+    margin: 0px 16px;
+  }
+}
+
+.other-art-by-artist {
+  display: flex;
+  justify-content: flex-start;
+  margin: 12px -16px;
+}

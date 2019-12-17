@@ -20,6 +20,16 @@
       <p><%= artwork.viewing_location.name %></p>
       <p> This <%= artwork.category.downcase %> is <%= artwork.medium.downcase %> </p>
     </div>
+    <% if artwork.artist.artworks.count > 1%>
+      <h3>All work by <%= artwork.artist.name %>:</h3>
+      <div class="other-art-by-artist">
+        <% artwork.artist.artworks.each do |artwork| %>
+          <%= link_to artwork_path(artwork) do %>
+            <div class="artwork-thumbnail"><%= image_tag artwork.photo %></div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
 </div>
