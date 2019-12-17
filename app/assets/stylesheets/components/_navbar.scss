@@ -11,6 +11,7 @@
   transition: top 0.3s;
   z-index:1;
   height: 60px;
+  background-color: white;
 }
 
 .navbar-light .navbar-toggler {
@@ -48,17 +49,16 @@
   text-align: center;
   line-height: 30px;
   a {
-    color: black;
+    color: #777A68;
     display: inline-block;
     vertical-align: middle;
   }
 }
 
 .logo img {
-  width: 58%;
+  width: 38%;
   vertical-align: middle;
   margin: 0;
-  margin-right: -50px;
   margin-bottom: 6px;
 }
 
@@ -67,9 +67,21 @@
   font-size: 18px;
 }
 
+.nav-item {
+  background-color: white;
+  width: 100px;
+  color:black;
+}
 
+.nav-link {
+    margin-left: 8px;
 
+}
 
+.avatar.dropdown-toggle {
+  margin: 0px 0px 8px 8px;
+}
 
-
-
+.bg-light {
+  background-color: white !important;
+}
