@@ -1,19 +1,16 @@
 <%= render 'shared/details-artwork-banner', artwork: @artwork %>
 
 <div class="container">
-
-<div class="open-tab-buttons">
-<button class="activity-btn active" id="btn-left"> Description </button>
-<button class="activity-btn" id="btn-right" > Comment </button>
+  <div class="open-tab-buttons">
+    <button class="activity-btn active" id="btn-left"> Description </button>
+    <button class="activity-btn" id="btn-right" > Comment </button>
+  </div>
 </div>
 
+<div id="content-right">
+  <%= render 'shared/comments', comments: @comments %>
 </div>
 
-<div id="comment">
-<%= render 'shared/comments', comments: @comments %>
+<div id="content-left">
+  <%= render 'shared/details-artwork', artwork: @artwork %>
 </div>
-
-<div id="description">
-<%= render 'shared/details-artwork', artwork: @artwork %>
-</div>
-
