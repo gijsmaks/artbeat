@@ -13,7 +13,7 @@
 .navbar-icon {
   line-height: 30px;
   text-align: center;
-      font-size: 20px;
+  font-size: 20px;
   .navbar-toggler-icon {
     vertical-align: middle;
     display: inline-block;
@@ -58,7 +58,6 @@
 
 .nav-item {
   background-color: white;
-
 }
 
 .nav-link {
@@ -105,4 +104,8 @@
   &:focus {
     color: #F95861;
   }
+}
+
+.user-content {
+  margin-top: 16px;
 }
