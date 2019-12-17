@@ -55,10 +55,9 @@
 }
 
 .logo img {
-  width: 58%;
+  width: 38%;
   vertical-align: middle;
   margin: 0;
-  margin-right: -50px;
   margin-bottom: 6px;
 }
 
@@ -67,9 +66,12 @@
   font-size: 18px;
 }
 
+.navbar.navbar-light.bg-light {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-
-
-
-
-
+#navbar-search{
+  color: #777A68;
+}
