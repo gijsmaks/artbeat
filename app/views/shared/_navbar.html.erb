@@ -4,7 +4,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="logo">
-      <%= link_to image_tag("artbeat-logo.png"), root_path %>
+      <%= link_to cl_image_tag("artbeat-logo.png"), root_path %>
     </div>
     <div class="navbar-icon search-icon">
       <%= link_to artworks_path do %>
@@ -21,6 +21,9 @@
       </li>
       <li class="nav-item">
         <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Upload your image", new_artwork_path(current_user.id), class: "nav-link" %>
       </li>
       <li class="nav-item-log-in-out">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>

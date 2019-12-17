@@ -1,4 +1,5 @@
 class Artwork < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :artist
   belongs_to :viewing_location
   has_many :artwork_categorys
