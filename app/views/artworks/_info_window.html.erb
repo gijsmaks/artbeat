@@ -1,3 +1,9 @@
 <div class="map-box">
-<%= link_to artworks.title, artwork_path(artworks) %>
+  <% viewing_location.artworks.each do |artwork| %>
+  <ul class="list-group">
+    <li class="list-unstyled">
+      <%= link_to artwork.title, artwork_path(artwork) %>
+    </li>
+  </ul>
+  <% end %>
 </div>
