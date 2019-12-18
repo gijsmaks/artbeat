@@ -27,7 +27,7 @@ christos = User.create(username: 'Christos', email: 'christos@gmail.com', passwo
 clearing_aero = ViewingLocation.create(
   name: "Clearing Aero",
   address: "Carrer de Corsega, 467, Barcelona",
-  description: "Clearing Aero's penchant for new streetart and film is sculpted into subtle, provocative and highly original shows. Limited-edition artists' texts, detailed explanations in English and Silvia's own bilingual talents complement the exhibitions. You'll enter intrigued, but emerge informed"
+  description: "Clearing Aero's penchant for new streetart and film is sculpted into subtle, provocative and highly original shows. Limited-edition artists' texts, detailed explanations in English and Silvia's own bilingual talents complement the exhibitions. You'll enter intrigued, but emerge informed",
   remote_photo_url: 'https://www.santpaubarcelona.org/sites/default/files/styles/news_teaser/public/flickr/12835239003_0fda5fb8ab_1393612375.jpg?itok=U2gP9jjg'
   )
 
@@ -36,7 +36,7 @@ sleep(2)
 rooted = ViewingLocation.create(
   name: "Rooted",
   address: "Carrer de Corsega, 1, Barcelona",
-  description: "Rooted Gallery galleries of Barcelona and Madrid work in cahoots to coordinate and organise exhibitions of the artists they represent in other galleries and private and public institutions. Rooted Gallery family of galleries was founded in London in 1946 and won prestige in the 1950s for being the first gallery to show the German Expressionists in London. By 1958 Clearing Below Gallery was representing such artists as Oskar Kokoschka, Henry Moore, Francis Bacon, Victor Pasmore and Lucian Freud."
+  description: "Rooted Gallery galleries of Barcelona and Madrid work in cahoots to coordinate and organise exhibitions of the artists they represent in other galleries and private and public institutions. Rooted Gallery family of galleries was founded in London in 1946 and won prestige in the 1950s for being the first gallery to show the German Expressionists in London. By 1958 Clearing Below Gallery was representing such artists as Oskar Kokoschka, Henry Moore, Francis Bacon, Victor Pasmore and Lucian Freud.",
   remote_photo_url: 'https://cdn02.visitbarcelona.com/files/5531-6681-imagenCAT/Centre_Cultura_Contemporania_CCCB_Barcelona_c2.jpg'
   )
 
@@ -45,7 +45,7 @@ sleep(2)
 young_steps = ViewingLocation.create(
   name: "Young Steps",
   address: "Carrer de Mallorca, 411, Barcelona",
-  description: "Young Steps Arts started out with the aim of creating a hybrid platform between commercial mediation and cultural contribution to disseminate current artistic trends. The gallery focuses on projects that reflect contextual dynamics, and artists working in the socio-political realm, such as Eugenio Merino, Núria Güell, the collective known as Democracia, and Carlos Aires, among others."
+  description: "Young Steps Arts started out with the aim of creating a hybrid platform between commercial mediation and cultural contribution to disseminate current artistic trends. The gallery focuses on projects that reflect contextual dynamics, and artists working in the socio-political realm, such as Eugenio Merino, Núria Güell, the collective known as Democracia, and Carlos Aires, among others.",
   remote_photo_url: 'http://www.blogmuseupicassobcn.org/wp-content/uploads/2013/07/CRO_A.04_0260.jpg'
   )
 
@@ -54,7 +54,7 @@ sleep(2)
 locust_focus = ViewingLocation.create(
   name: "Locust Focus",
   address: "Carrer de Budapest, 2, Barcelona",
-  description: "Ever since its inception in 1976, Locust Focus Gallery has been part of art fairs Arco, Art Basel and Art Basel-Miami Beach. The gallery was one of the city's pioneers in contemporary art and continues to promote the various forms these artists use to express themselves."
+  description: "Ever since its inception in 1976, Locust Focus Gallery has been part of art fairs Arco, Art Basel and Art Basel-Miami Beach. The gallery was one of the city's pioneers in contemporary art and continues to promote the various forms these artists use to express themselves.",
   remote_photo_url: 'https://www.shbarcelona.com/blog/en/wp-content/uploads/2015/11/MACBA_2011-810x608.jpg'
   )
 
@@ -63,7 +63,7 @@ sleep(2)
 nuu_clearing = ViewingLocation.create(
   name: "Nuu Clearing",
   address: "Carrer de la Granja, 20, Barcelona",
-  description: "The gallery of Nuu Clearing opened its doors in 2005. A veteran art lover who in the past had a foothold in the world of entertainment. In this gallery, art pieces are mixed with unconventional objects and furniture. They represent artists such as Antoni Llena, Joan Miró, Luis Marsans, Hernández Pijuan and Saul Steinberet, among others."
+  description: "The gallery of Nuu Clearing opened its doors in 2005. A veteran art lover who in the past had a foothold in the world of entertainment. In this gallery, art pieces are mixed with unconventional objects and furniture. They represent artists such as Antoni Llena, Joan Miró, Luis Marsans, Hernández Pijuan and Saul Steinberet, among others.",
   remote_photo_url: 'https://media-edg.barcelona.cat/wp-content/uploads/2015/05/fundacio-antoni-tapies-760x428.jpg'
   )
 
