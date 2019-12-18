@@ -1,6 +1,6 @@
 class ViewingLocation < ApplicationRecord
   has_many :artworks
-
+  mount_uploader :photo, PhotoUploader
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   validates :latitude, presence: true
