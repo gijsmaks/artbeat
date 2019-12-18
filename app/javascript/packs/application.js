@@ -9,5 +9,11 @@ initMapbox();
 import { detectScroll } from "./index_seachbar"
 detectScroll();
 
+import { algoliaSearch } from './algolia_search';
+algoliaSearch();
+
 import { openTab } from './open_tab';
 openTab();
+
+
+
