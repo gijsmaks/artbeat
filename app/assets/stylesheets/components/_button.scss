@@ -6,8 +6,28 @@
   transition: background 0.3s ease;
 }
 
+.btn-flat-small {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 2px;
+  background: #F85961;
+  transition: background 0.3s ease;
+  margin: 0;
+}
+
+.btn-flat-small a {
+  font-weight: 400 !important;
+  font-size: 0.9em !important;
+}
+
 .btn-flat:hover {
   background: #6e6e6e;
   color: white;
   text-decoration: none;
+}
+
+.btn {
+  position: absolute;
+  right: 15px;
+  padding: 8px 24px;
 }
