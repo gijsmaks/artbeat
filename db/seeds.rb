@@ -195,14 +195,12 @@ stone_heart_nb = Artwork.create!(
 
 phm = Artwork.create!(
   viewing_location: locust_focus,
-  title: "phm",
+  title: "Mister Brick N&B",
   artist: depose,
-  remote_photo_url: 'https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/502697_1_m.jpg',
-  # remote_photo_url: "https://streetart.photo/photos/large/8f/1d/8f1d9f13-134e-4a7f-a889-4b44cc06fcbe.jpg",
-  # TODO: Set back prev photo, but smaller size
+  remote_photo_url: 'https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/502391_1_l.jpg',
   date_of_creation: "2018",
   # description: "",
-  medium: "Print Screen Print",
+  medium: "Print silkscreen",
   category: "Street art"
   )
 
