@@ -1,9 +1,8 @@
 <div class="map-box">
-  <% viewing_location.artworks.each do |artwork| %>
-  <ul class="list-group">
-    <li class="list-unstyled">
-      <%= link_to artwork.title, artwork_path(artwork) %>
-    </li>
-  </ul>
-  <% end %>
+  <%= link_to viewing_location.name, viewing_location_path(viewing_location)%>
+  <div class="artworks-preview">
+    <% viewing_location.artworks[0..2].each do |artwork| %>
+      <%= cl_image_tag artwork.photo, class: "artwork-preview" %>
+    <% end %>
+  </div>
 </div>

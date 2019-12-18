@@ -2,7 +2,15 @@
   <div class="details-head">
     <div class="headings">
       <div class="art-title"><%= artwork.title %></div>
-      <div class="artist-name"><%= artwork.artist.name %></div>
+
+
+<!--   date_of_creation:
+  medium:
+  category: -->
+
+
+
+    <div class="artist-name"><%= artwork.artist.name %></div>
     </div>
     <div class="fave-save">
       <% if current_user.saved?(artwork) %>
@@ -15,12 +23,39 @@
 
   <div class="details-body">
     <div class="description">
-      <p><%= artwork.date_of_creation %> </p>
-      <p><%= artwork.viewing_location.name %></p>
-      <p> This <%= artwork.category.downcase %> is <%= artwork.medium.downcase %> </p>
-    </div>
+
+      <div class="top-and-bottom-border">
+        <div class="font-grey-to-black">
+          <p><strong>Gallery</strong></p>
+        </div>
+          <div class="flex-justify-space-between">
+            <p><%= artwork.viewing_location.name %></p>
+            <% link_to "More work", viewing_location_path %>
+
+            <%= link_to "More work", viewing_location_path, class: "btn-flat-small" %>
+          </div>
+      </div>
+
+      <div class="top-and-bottom-border">
+        <div class="font-grey-to-black ">
+          <p><strong>Artwork details</strong></p>
+        </div>
+            <p><strong> Date of creation </strong></p>
+            <p> <%= artwork.date_of_creation %> </p>
+          <br>
+            <p><strong> Medium </strong></p>
+            <p> <%= artwork.medium %> </p>
+          <br>
+            <p><strong> Category </strong></p>
+            <p> <%= artwork.category %> </p>
+      </div>
+
+
+<div class="top-and-bottom-border">
+  <div class="font-grey-to-black ">
     <% if artwork.artist.artworks.count > 1%>
-      <h3>All work by <%= artwork.artist.name %>:</h3>
+      <p><strong>Work by <%= artwork.artist.name %></strong></p>
+  </div>
       <div class="other-art-by-artist">
         <% artwork.artist.artworks.each do |artwork| %>
           <%= link_to artwork_path(artwork) do %>
@@ -30,6 +65,10 @@
       </div>
     <% end %>
   </div>
+</div>
+
+
+<!-- THIS IS THE MODAL -->
 
 </div>
 <div class="all-screen">

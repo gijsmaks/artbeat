@@ -12,7 +12,7 @@
 .open-tab-buttons {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 #content-left {
@@ -39,4 +39,10 @@ button:focus {
 .activity-btn {
   width: 50%;
   transition: border-bottom 0.5s ease;
+  color: black;
+}
+
+.open-tab-buttons p {
+  text-align: center;
+  margin-top: 5px;
 }

@@ -36,7 +36,12 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new(artwork_params)
-    @artwork.save
+    if @artwork.save(validate: false)
+      match_artwork
+      redirect_to artwork_path(@artwork)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -55,6 +60,17 @@ class ArtworksController < ApplicationController
   # end
 
   private
+
+  def match_artwork
+    @found_artwork = ArtMatcher.new(@artwork.reload).call
+    if @found_artwork
+      @artwork.destroy
+      @artwork = @found_artwork
+      flash[:notice] = "We recognized this piece! It's #{@found_artwork.title}"
+    else
+      flash[:notice] = "This is our first version of this piece!"
+    end
+  end
 
   def get_tags
     current_user.saved_artworks.pluck(:tag).uniq
