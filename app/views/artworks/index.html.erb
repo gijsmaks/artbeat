@@ -7,21 +7,12 @@
   <% else %>
     <div class="container">
       <div class="open-tab-buttons" style="margin-top: 12px;">
-        <button class="activity-btn active" id="btn-left">Artwork</button>
-        <button class="activity-btn" id="btn-right" >Map</button>
+        <button class="activity-btn active" id="btn-left-map">Artwork</button>
+        <button class="activity-btn" id="btn-right-map" >Map</button>
       </div>
     </div>
 
-    <div id="content-right">
-      <div
-        id="map"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-    </div>
-
-    <div id="content-left">
+    <div id="content-left-artwork">
       <div class="card-columns">
         <% @artworks.each do |art| %>
           <%= link_to artwork_path(art) do %>
@@ -29,6 +20,15 @@
           <% end %>
         <% end %>
       </div>
+    </div>
+
+     <div id="content-right-map" class="d-block">
+        <div
+        id="map"
+        style="width: 100%; height: 428px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
     </div>
   <% end %>
 </div>

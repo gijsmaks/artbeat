@@ -3,7 +3,6 @@
   border-bottom: 2px solid #F75961;
   background-color: white;
 
-
   // &:focus {
   //   border-bottom: 2px solid #F75961;
   //   outline: none;
@@ -16,8 +15,21 @@
   margin-bottom: 15px;
 }
 
+#content-left {
+  display: block;
+}
+
+#content-left-artwork {
+  //Height of map, DO NOT TOUCH please
+  margin-bottom: -100%;
+}
+
 #content-right {
   display: none;
+}
+
+#content-right-map {
+  visibility: hidden;
 }
 
 button:focus {
