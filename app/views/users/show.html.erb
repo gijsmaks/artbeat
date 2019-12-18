@@ -13,16 +13,18 @@
     <div id="content-left">
       <div class="collections mt-3">
         <% @tags.each do |tag| %>
-          <div class="collection-thumb d-flex">
-            <% if current_user.saved_artworks_for(tag).last %>
-              <div class="collection-image"><%= cl_image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
-            <% else %>
-              <div class="collection-image"><i class="fas fa-palette"></i></div>
-            <% end %>
-            <div class="collection-tag-link">
-              <p><%= tag %></p>
+          <%= link_to collection_path(tag) do %>
+            <div class="collection-thumb d-flex">
+              <% if current_user.saved_artworks_for(tag).last %>
+                <div class="collection-image"><%= cl_image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
+              <% else %>
+                <div class="collection-image"><i class="fas fa-palette"></i></div>
+              <% end %>
+              <div class="collection-tag-link">
+                <p><%= tag %></p>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>

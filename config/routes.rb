@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :comments, only: [:destroy, :edit, :update]
   resources :favorites, only: [:index, :destroy]
   resources :users, only: [:show]
+  get "/collections/:tag", to: "saved_artworks#show", as: "collection"
 end

@@ -1,4 +1,9 @@
 class SavedArtworksController < ApplicationController
+  def show
+    @tag = find_tag
+    @saved_artworks = current_user.saved_artworks.where(tag: find_tag)
+  end
+
   def create
     @artwork = Artwork.find(params[:artwork_id])
     @saved_artwork = SavedArtwork.new(saved_artwork_params)
@@ -12,6 +17,10 @@ class SavedArtworksController < ApplicationController
   end
 
   private
+
+  def find_tag
+    params[:tag]
+  end
 
   def saved_artwork_params
     params.require(:saved_artwork).permit(:tag)

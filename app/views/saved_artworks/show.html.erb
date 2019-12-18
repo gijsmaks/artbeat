@@ -1,0 +1,10 @@
+<div class="container">
+  <h3 style="padding-top: 16px;"><%= @tag %></h3>
+  <div class="card-columns">
+    <% @saved_artworks.each do |saved_artwork| %>
+      <%= link_to artwork_path(saved_artwork.artwork) do %>
+        <%= render 'artworks/card-artwork', artwork: saved_artwork.artwork %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
