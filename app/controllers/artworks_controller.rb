@@ -7,7 +7,8 @@ class ArtworksController < ApplicationController
     # @location_id = @location.id if @location
     # @artworks = Artwork.where(viewing_location_id: @location_id)
     if params[:search].present?
-      @artworks = Artwork.search_by(params[:search])
+      # @artworks =
+      @artworks = Artwork.search(params[:search])
     else
       @artworks = Artwork.all
     end

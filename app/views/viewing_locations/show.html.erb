@@ -1,1 +1,16 @@
-<%= render 'shared/details-location', artwork: @artwork %>
+<%= render 'shared/details-location-banner', viewing_location: @viewing_location %>
+
+<div class="container">
+  <div class="open-tab-buttons">
+    <p class="activity-btn active" id="btn-left"> Description </p>
+    <p class="activity-btn" id="btn-right" > Map </p>
+  </div>
+</div>
+
+<div id="content-right">
+  <%= render 'shared/map' %>
+</div>
+
+<div id="content-left">
+  <%= render 'shared/details-location', viewing_location: @viewing_location %>
+</div>

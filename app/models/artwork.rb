@@ -13,9 +13,13 @@ class Artwork < ApplicationRecord
     against: [:title, :description],
     associated_against: {
       artist: [:name],
-      viewing_location: [:name, :address]
+      viewing_location: [:name]
     },
     using: {
       tsearch: { prefix: true }
     }
+
+  def self.search(query)
+    search_by(query) + ViewingLocation.near(query).map(&:artworks).flatten
+  end
 end
