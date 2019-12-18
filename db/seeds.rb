@@ -68,73 +68,73 @@ ViewingLocation.where(latitude: nil).delete_all
 franco_fasoli = Artist.create(
   name: "Franco Fasoli",
   bio: "Born in Buenos Aires and now living in Barcelona, Franco Fasoli is one of the most famous and talented urban artists of the Argentine artistic scene. A set designer and muralist, the art of Fasoli is influenced both by his ceramic studies and by the local technique of ‘porteño filleting’. It is at the end of the last decade when Franco introduces to his work characters of human bodies and animal heads, while also adopting influences from mexican wrestling and football hooliganism.",
-  remote_photo_url: 'https://d2jv9003bew7ag.cloudfront.net/uploads/franco-fasoli-jaz-portrit-555x312.jpg'
+  # remote_photo_url: 'https://d2jv9003bew7ag.cloudfront.net/uploads/franco-fasoli-jaz-portrit-555x312.jpg'
   )
 
 depose = Artist.create(
   name: "Depose",
   bio: "DEPOSE is a French graffiti artist, born in 1977 in Sete. Since more than twenty years, he's been drawing art on walls in the form of tags and frescoes. He has a passion for letters and drawing. His style is a lot like black and white comic strips, where bubbles trickle and animals live with imaginary plants, and there are universal recurring themes like skull and crossbones or heart. He regularly exhibits in galleries and contributes to fresco projects, as an artist or artistic director.",
-  remote_photo_url: 'https://scontent-mad1-1.xx.fbcdn.net/v/t1.0-9/67133257_10156903966279145_7754939923991363584_n.jpg?_nc_cat=102&_nc_ohc=TXjjNomRdqgAQmz4zmgIJQtw4zrLbusQIbdEbfuiDfEs01Z50Ad-mMpQw&_nc_ht=scontent-mad1-1.xx&oh=b28df1eec1c70568da40346833451c5a&oe=5E7E8892'
+  # remote_photo_url: 'https://scontent-mad1-1.xx.fbcdn.net/v/t1.0-9/67133257_10156903966279145_7754939923991363584_n.jpg?_nc_cat=102&_nc_ohc=TXjjNomRdqgAQmz4zmgIJQtw4zrLbusQIbdEbfuiDfEs01Z50Ad-mMpQw&_nc_ht=scontent-mad1-1.xx&oh=b28df1eec1c70568da40346833451c5a&oe=5E7E8892'
   )
 
 mist = Artist.create(
   name: "Mist",
   bio: "Guillaume Lemarquier alias Mist was born in Paris in 1972. He is a street artist, and more specifically a graffiti artist, an art that he discovered in 1988. He became recognized very quickly as one of the most talented and respected graffiti artists in Paris and as one of the best artists making wild style graffiti lettering in Europe. He has marked the generation that gave birth to what was to become street-art culture.",
-  remote_photo_url: 'https://scontent-mad1-1.xx.fbcdn.net/v/t31.0-8/11428102_10152876339752826_4446847946787898705_o.jpg?_nc_cat=106&_nc_ohc=Y57i5PT0Nj8AQmbU_wqzbdqbO9WQGpy6nT7IFWRbss15Tx0bR4ndWMWZw&_nc_ht=scontent-mad1-1.xx&oh=b745d83b2612e0d218f40983746d06cf&oe=5E6B7104'
+  # remote_photo_url: 'https://scontent-mad1-1.xx.fbcdn.net/v/t31.0-8/11428102_10152876339752826_4446847946787898705_o.jpg?_nc_cat=106&_nc_ohc=Y57i5PT0Nj8AQmbU_wqzbdqbO9WQGpy6nT7IFWRbss15Tx0bR4ndWMWZw&_nc_ht=scontent-mad1-1.xx&oh=b745d83b2612e0d218f40983746d06cf&oe=5E6B7104'
   )
 
 danny_o_connor = Artist.create(
   name: "Danny O'Connor",
   bio: "My work is a celebration of contrasts focusing mainly on portraits and figures with a prevalence of opposing artistic influences. My inspiration walks a tightrope between high and lowbrow sources as diverse as Comics, Illustration, Character Design, Tattoo Art and Graffiti to Abstract Expressionism, Cubism, Futurism, Art Noveau, Modernism and Constructivism all pulled together to create hyper stylised and abstracted works. Contrasts play a big role in what I do, it's probably the most resounding feature throughout all of my work in one way or another. I like to mix natural flowing lines with harsh diagonals. Clean crisp areas of colour with layered messy splashes of paint. I'm trying to achieve something that appears both modern and almost futuristic whilst retaining a raw traditional aesthetic.",
-  remote_photo_url: 'https://www.villadelarte.com/dannyoconnor?lightbox=dataItem-il3t2emy'
+  # remote_photo_url: 'https://www.villadelarte.com/dannyoconnor?lightbox=dataItem-il3t2emy'
   )
 
 francoise_nielly = Artist.create(
   name: "Françoise Nielly",
   bio: "Françoise Nielly has explored the different facets of image all her life, through painting, photography, roughs, illustrations and virtual computer generated animated graphics. It is clear now that painting is her direction and her passion. She gets her sense of space and construction from her father, who was an architect. Growing up in the South of France where she lived between Cannes and Saint-Tropez, she was never far from the light, the colour sense and the atmosphere that permeates the South of France. This is coupled with her studies at the Beaux Arts and Decorative Arts, and her sense of humour and of celebration.",
-  remote_photo_url: 'https://www.villadelarte.com/francoisenielly?lightbox=dataItem-iki7m9m21'
+  # remote_photo_url: 'https://www.villadelarte.com/francoisenielly?lightbox=dataItem-iki7m9m21'
   )
 
 mari_ito = Artist.create(
   name: "Mari Ito",
   bio: "Mari Ito was born in Tokyo, Japan in 1980. She majored in Nihonga, Japanese-style painting made with traditional practices, techniques and materials. She moved to Barcelona (Spain) in 2006. Since then she has taken up residence here and with Nihonga as her base she has developed various 2-D and sculptural works. With her motif centered upon her childhood experiences, loud colors and sensitive but sophisticated lines create unique works beyond traditional Japanese painting, opening up a unique image of the world. In pursuing the universal theme of the seeds of human desire, with its mix of happiness, sorrow and wrath, and in particular through the recurring image of flowers with faces, she reveals her distinctive approach, which is also filled with humor.",
-  remote_photo_url: 'https://static.wixstatic.com/media/29f7e0_ad6b4496f2e7458eb861c3d8c18e5ca3~mv2_d_4000_5808_s_4_2.jpg/v1/crop/x_0,y_386,w_4000,h_4482/fill/w_1200,h_1345,al_c,q_90,usm_0.66_1.00_0.01/Mari%20Ito%20I.webp'
+  # remote_photo_url: 'https://static.wixstatic.com/media/29f7e0_ad6b4496f2e7458eb861c3d8c18e5ca3~mv2_d_4000_5808_s_4_2.jpg/v1/crop/x_0,y_386,w_4000,h_4482/fill/w_1200,h_1345,al_c,q_90,usm_0.66_1.00_0.01/Mari%20Ito%20I.webp'
   )
 
 nemo_jantzen = Artist.create(
   name: "Nemo Jantzen",
   bio: "In my latest body of work it’s all about perception, how each individual perceives things differently, how things can change and looked at from a different angle or point of view, examining the effects and influence mass media has on our modern society and how it determines what we think and changes our perception of the world around us. Constantly bombarded with messages from a multitude of sources including, TV, Billboards, magazine and social media to name a few not only promoting products but also determining our behaviors, needs, what is and what is not important to know, concealing the truth and manipulating the masses. Like magicians shifting our focus and our attention to what they want us see or perceive while the real magic or rather the deception is actually happening elsewhere in front of your eyes.",
-  remote_photo_url: 'https://static.wixstatic.com/media/29f7e0_f86b51f1a9f74ca8b62d991e8d399286~mv2.jpg/v1/fill/w_445,h_671,al_c,lg_1,q_90/29f7e0_f86b51f1a9f74ca8b62d991e8d399286~mv2.webp'
+  # remote_photo_url: 'https://static.wixstatic.com/media/29f7e0_f86b51f1a9f74ca8b62d991e8d399286~mv2.jpg/v1/fill/w_445,h_671,al_c,lg_1,q_90/29f7e0_f86b51f1a9f74ca8b62d991e8d399286~mv2.webp'
   )
 
 frank_hollywood = Artist.create(
   name: "Frank E Hollywood",
   bio: "Frank E Hollywood is best described as one of the most exciting multi-disciplinary media artist in the Netherlands. His pop-art paintings are filled with all kind of media, spray paint, magic markers and women. We figured he must have formed some helpful expertise by looking at women so closely for all those years, so we decided to talk to him about beauty.",
-  remote_photo_url: 'https://squaah.com/images/squaahcommunity/Art__Design/franksfseerzw.jpg'
+  # remote_photo_url: 'https://squaah.com/images/squaahcommunity/Art__Design/franksfseerzw.jpg'
   )
 
 marc_harrold = Artist.create(
   name: "Marc Harrold",
   bio: "Marc Harrold’s photography is an exploration of time and space. In his BEACH series, Harrold opens out space with limitless sky above and ever-changing beach horizons. Within this unbound space, he composes fleeting moments by defining movement. Here is an evocative atmosphere that puts you on the beach during a late afternoon low tide on that perfect August day in the Hamptons, watching your kids in the surf, or out for an early morning beach run.",
-  remote_photo_url: 'https://static.wixstatic.com/media/29f7e0_a19c4b8f78fa47c4aad7eb8b5d5b1c0e~mv2.jpg/v1/fill/w_696,h_960,al_c,q_90/29f7e0_a19c4b8f78fa47c4aad7eb8b5d5b1c0e~mv2.webp'
+  # remote_photo_url: 'https://static.wixstatic.com/media/29f7e0_a19c4b8f78fa47c4aad7eb8b5d5b1c0e~mv2.jpg/v1/fill/w_696,h_960,al_c,q_90/29f7e0_a19c4b8f78fa47c4aad7eb8b5d5b1c0e~mv2.webp'
   )
 
 miles_aldridge = Artist.create(
   name: "Miles Aldridge",
   bio: "Miles Aldridge is a fashion photographer widely known for the distinctive style of his photographs, which are over-saturated, surreal, and glamorous. Aldridge sets a stage and mood akin to the great Hollywood directors of the 1940s through 1960s. Infused with intense color, light, and drama, his women and men are always beautiful yet detached. The women he portrays, in particular, are often caught in dark or mysterious situations. Among his influences are his father, graphic designer Alan Aldridge, and filmmakers David Lynch, Derek Jarman, and Federico Fellini.",
-  remote_photo_url: 'https://artzealous.com/wp-content/uploads/2017/08/MilesPortrait.jpg'
+  # remote_photo_url: 'https://artzealous.com/wp-content/uploads/2017/08/MilesPortrait.jpg'
   )
 
 eric_lecan = Artist.create(
   name: "Eric Lecan",
   bio: "Eric Lacan, aka Monsieur Qui, born in 1976 in Montreuil in the Parisian suburbs, now lives and works nearby in Vincennes. After collaborating in the 1990s with the PG (Putain de Gosses) crew and the 132 crew, he moved in the early 2000s from Paris to Marseille, where he had no time for graffiti but discovered collage via a flat mate’s New York photo-reports.",
-  remote_photo_url: 'https://pfrunner.files.wordpress.com/2015/11/c-pfrunner-e280a6-eric-lacan-__img_5172.jpg'
+  # remote_photo_url: 'https://pfrunner.files.wordpress.com/2015/11/c-pfrunner-e280a6-eric-lacan-__img_5172.jpg'
   )
 
 jerome_mesnager = Artist.create(
   name: "Jerome Mesnager",
   bio: "What do the Great Wall of China and the Red Square in Moscow have in common with many walls of Paris streets? The answer is hiding in the street art: l’Homme en blanc or the White Man – a drawn silhouette of a man, imagined as a symbol of light, strength and peace, created in 1983 by the French artist Jérôme Mesnager. Educated for a cabinet maker and the comics’ author, this artist distinguished himself during the rise of the free figuration in the early 1980s, together with Blek le rat, Miss Tic, Jef Aérosol and Némo.",
-  remote_photo_url: 'https://d2jv9003bew7ag.cloudfront.net/uploads/Jerome-Mesnager-profile-555x312.jpg'
+  # remote_photo_url: 'https://d2jv9003bew7ag.cloudfront.net/uploads/Jerome-Mesnager-profile-555x312.jpg'
   )
 
 ############ artwork ################
@@ -197,7 +197,9 @@ phm = Artwork.create!(
   viewing_location: locust_focus,
   title: "phm",
   artist: depose,
-  remote_photo_url: "https://streetart.photo/photos/large/8f/1d/8f1d9f13-134e-4a7f-a889-4b44cc06fcbe.jpg",
+  remote_photo_url: 'https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/502697_1_m.jpg',
+  # remote_photo_url: "https://streetart.photo/photos/large/8f/1d/8f1d9f13-134e-4a7f-a889-4b44cc06fcbe.jpg",
+  # TODO: Set back prev photo, but smaller size
   date_of_creation: "2018",
   # description: "",
   medium: "Print Screen Print",

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_212846) do
+ActiveRecord::Schema.define(version: 2019_12_18_111335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_212846) do
     t.string "medium"
     t.string "category"
     t.string "related_artworks"
+    t.string "phash"
     t.index ["artist_id"], name: "index_artworks_on_artist_id"
     t.index ["viewing_location_id"], name: "index_artworks_on_viewing_location_id"
   end
