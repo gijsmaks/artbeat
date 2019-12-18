@@ -2,23 +2,18 @@
   <div class="details-head">
     <div class="headings">
       <div class="art-title"><%= artwork.title %></div>
-
-
-<!--   date_of_creation:
-  medium:
-  category: -->
-
-
-
+  <!--   date_of_creation:
+    medium:
+    category: -->
     <div class="artist-name"><%= artwork.artist.name %></div>
-    </div>
-    <div class="fave-save">
-      <% if current_user.saved?(artwork) %>
-          <div class="fave-save-icon"><i class="fas fa-heart" style="color: #F85961"></i></div>
-      <% else %>
-          <div class="fave-save-icon"><i class="far fa-heart" style="color: black"></i></div>
-      <% end %>
-    </div>
+  </div>
+  <div class="fave-save">
+    <% if current_user.saved?(artwork) %>
+    <div class="fave-save-icon"><i class="fas fa-heart" style="color: #F85961"></i></div>
+    <% else %>
+    <div class="fave-save-icon"><i class="far fa-heart" style="color: black"></i></div>
+    <% end %>
+  </div>
   </div>
 
   <div class="details-body">
@@ -28,75 +23,74 @@
         <div class="font-grey-to-black">
           <p><strong>Gallery</strong></p>
         </div>
-          <div class="flex-justify-space-between">
-            <p><%= artwork.viewing_location.name %></p>
-            <% link_to "More work", viewing_location_path %>
-
-            <%= link_to "More work", viewing_location_path, class: "btn-flat-small" %>
-          </div>
+        <div class="flex-justify-space-between">
+          <p><%= artwork.viewing_location.name %></p>
+          <%= link_to "More work", viewing_location_path(artwork.viewing_location), class: "btn-flat-small" %>
+        </div>
       </div>
 
       <div class="top-and-bottom-border">
         <div class="font-grey-to-black ">
           <p><strong>Artwork details</strong></p>
         </div>
-            <p><strong> Date of creation </strong></p>
-            <p> <%= artwork.date_of_creation %> </p>
-          <br>
-            <p><strong> Medium </strong></p>
-            <p> <%= artwork.medium %> </p>
-          <br>
-            <p><strong> Category </strong></p>
-            <p> <%= artwork.category %> </p>
+        <p><strong> Date of creation </strong></p>
+        <p> <%= artwork.date_of_creation %> </p>
+        <br>
+        <p><strong> Medium </strong></p>
+        <p> <%= artwork.medium %> </p>
+        <br>
+        <p><strong> Category </strong></p>
+        <p> <%= artwork.category %> </p>
       </div>
 
 
-<div class="top-and-bottom-border">
-  <div class="font-grey-to-black ">
-    <% if artwork.artist.artworks.count > 1%>
-      <p><strong>Work by <%= artwork.artist.name %></strong></p>
-  </div>
-      <div class="other-art-by-artist">
-        <% artwork.artist.artworks.each do |artwork| %>
+      <div class="top-and-bottom-border">
+        <div class="font-grey-to-black ">
+          <% if artwork.artist.artworks.count > 1%>
+          <p><strong>Work by <%= artwork.artist.name %></strong></p>
+        </div>
+        <div class="other-art-by-artist">
+          <% artwork.artist.artworks.each do |artwork| %>
           <%= link_to artwork_path(artwork) do %>
-            <div class="artwork-thumbnail"><%= cl_image_tag artwork.photo %></div>
+          <div class="artwork-thumbnail"><%= cl_image_tag artwork.photo %></div>
           <% end %>
+          <% end %>
+        </div>
         <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
-
-
-<!-- THIS IS THE MODAL -->
-
-</div>
-<div class="all-screen">
-  <div class="save-modal">
-    <h3 class="which-collection">In which collection would you like to save "<%= artwork.title %>"?</h3>
-    <div>
-      <% @tags.each do |tag| %>
-        <%= link_to artwork_saved_artworks_path(artwork, {saved_artwork: {tag: tag}}), method: :post do %>
-          <div class="collection-thumb d-flex">
-            <% if current_user.saved_artworks_for(tag).last %>
-              <div class="collection-image"><%= cl_image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
-            <% else %>
-              <div class="collection-image"><i class="fas fa-palette"></i></div>
-            <% end %>
-            <div class="collection-tag-link">
-              <p><%= tag %></p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
     </div>
 
-    <h3 class="new-collection">New collection</h3>
-    <div class="new-collection-form">
-      <%= simple_form_for @saved_artwork, url: artwork_saved_artworks_path(artwork) do |f| %>
+
+    <!-- THIS IS THE MODAL -->
+
+  </div>
+  <div class="all-screen">
+    <div class="save-modal">
+      <h3 class="which-collection">In which collection would you like to save "<%= artwork.title %>"?</h3>
+      <div>
+        <% @tags.each do |tag| %>
+        <%= link_to artwork_saved_artworks_path(artwork, {saved_artwork: {tag: tag}}), method: :post do %>
+        <div class="collection-thumb d-flex">
+          <% if current_user.saved_artworks_for(tag).last %>
+          <div class="collection-image"><%= cl_image_tag current_user.saved_artworks_for(tag).last.photo, alt: "#" %></div>
+          <% else %>
+          <div class="collection-image"><i class="fas fa-palette"></i></div>
+          <% end %>
+          <div class="collection-tag-link">
+            <p><%= tag %></p>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+
+      <h3 class="new-collection">New collection</h3>
+      <div class="new-collection-form">
+        <%= simple_form_for @saved_artwork, url: artwork_saved_artworks_path(artwork) do |f| %>
         <%= f.input :tag, label: false, placeholder: "New collection name" %>
         <%= f.submit "Create Collection", class: "btn-flat new-comment-btn" %>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
