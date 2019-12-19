@@ -1,4 +1,6 @@
 const detectScroll = (event) => {
+  if (!document.getElementById("index-search")) return;
+
   var prevScrollpos = pageYOffset;
   document.addEventListener("scroll", (event) => {
     onScroll(prevScrollpos);
