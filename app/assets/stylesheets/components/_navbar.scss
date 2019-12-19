@@ -22,7 +22,8 @@
 
 .logo {
   line-height: 30px;
-  margin-right: -22px;
+  margin-right: -56px;
+  width: auto;
   a {
     font-family: Baskerville !important;
     color: black;
@@ -64,6 +65,7 @@
 .nav-link {
     margin-left: 16px;
     margin-bottom: 8px;
+    text-align: right;
 }
 
 .avatar.dropdown-toggle {
@@ -110,3 +112,4 @@
 .user-content {
   margin-top: 16px;
 }
+

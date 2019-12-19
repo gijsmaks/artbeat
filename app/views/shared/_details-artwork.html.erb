@@ -31,6 +31,13 @@
 
       <div class="top-and-bottom-border">
         <div class="font-grey-to-black ">
+          <p><strong>Artist details</strong></p>
+        </div>
+        <p> <%= artwork.artist.bio.truncate_words(24) %> <i> read more</i></p>
+      </div>
+
+      <div class="top-and-bottom-border">
+        <div class="font-grey-to-black ">
           <p><strong>Artwork details</strong></p>
         </div>
         <p><strong> Date of creation </strong></p>
@@ -42,7 +49,6 @@
         <p><strong> Category </strong></p>
         <p> <%= artwork.category %> </p>
       </div>
-
 
       <div class="top-and-bottom-border">
         <div class="font-grey-to-black ">

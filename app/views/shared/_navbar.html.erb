@@ -1,38 +1,40 @@
 <nav class="navbar navbar-light bg-light">
   <div class="navbar-content">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <% unless current_page?("/") %>
+      <div style="padding-left: 14px;"><%= link_to artworks_path, :class=>"btn-back" do%><i class="fas fa-chevron-left"></i><% end %></div>
+    <% else %>
+      <div style="width: 38px;"></div>
+    <% end %>
     <div class="logo">
       <%= link_to image_tag("artbeat-logo.png"), root_path %>
     </div>
-    <% unless current_page?("/") %>
-      <div><%= link_to artworks_path, :class=>"btn-back" do%><i class="fas fa-chevron-left"></i><% end %></div>
-    <% else %>
-      <div style="width: 23.25px;"></div>
-    <% end %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-      <li class="nav-item">
-        <%= link_to "Home", root_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Upload your image", new_artwork_path(current_user.id), class: "nav-link" %>
-      </li>
-      <li class="nav-item-log-in-out">
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      </li>
-      <% else %>
-      <li class="nav-item-log-in-out">
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      </li>
-      <% end %>
-    </ul>
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Image search", new_artwork_path(current_user.id), class: "nav-link" %>
+        </li>
+        <li class="nav-item-log-in-out">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+        <% else %>
+        <li class="nav-item-log-in-out">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>
