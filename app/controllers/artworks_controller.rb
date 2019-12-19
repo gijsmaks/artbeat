@@ -8,12 +8,12 @@ class ArtworksController < ApplicationController
     # @artworks = Artwork.where(viewing_location_id: @location_id)
     if params[:search].present?
       # @artworks =
-      @artworks = Artwork.search(params[:search])
+      @artworks = Artwork.search(params[:search]).select(&:viewing_location?)
     else
-      @artworks = Artwork.all
+      @artworks = Artwork.all.select(&:viewing_location?)
     end
     # Create markers here
-    viewing_locations = @artworks.map { |artwork| artwork.viewing_location }.uniq
+    viewing_locations = @artworks.map(&:viewing_location).uniq
     @markers = viewing_locations.map do |viewing_location|
       {
         lat: viewing_location.latitude,

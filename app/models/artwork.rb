@@ -22,4 +22,8 @@ class Artwork < ApplicationRecord
   def self.search(query)
     search_by(query) + ViewingLocation.near(query).map(&:artworks).flatten
   end
+
+  def viewing_location?
+    !viewing_location.nil?
+  end
 end
