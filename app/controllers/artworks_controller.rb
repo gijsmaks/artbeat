@@ -25,10 +25,12 @@ class ArtworksController < ApplicationController
 
   def show
     @artwork = Artwork.find(params[:id])
+
     @tags = get_tags
     @comments = @artwork.comments
     @comment = Comment.new
     @saved_artwork = SavedArtwork.new
+
   end
 
   def new
