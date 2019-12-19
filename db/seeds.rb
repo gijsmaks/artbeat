@@ -145,7 +145,7 @@ jerome_mesnager = Artist.create(
 ############ artwork ################
 sin_titulo_6 = Artwork.create!(
   viewing_location: locust_focus,
-  title: 'Sin Titulo 6',
+  title: 'El Tigre',
   artist: franco_fasoli,
   remote_photo_url: 'https://storage.gra1.cloud.ovh.net/v1/AUTH_10e1a9235c63431c95e5b84a247830db/prod/artwork/353770_1_m.jpg',
   date_of_creation: '2018',
