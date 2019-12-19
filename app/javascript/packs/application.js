@@ -17,3 +17,6 @@ detectScroll();
 
 import { algoliaSearch } from './algolia_search';
 algoliaSearch();
+
+import { loading } from './loading';
+loading();
