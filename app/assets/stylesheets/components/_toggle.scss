@@ -1,12 +1,5 @@
 .active {
-  border: none;
-  border-bottom: 2px solid #F75961;
-  background-color: white;
-
-  // &:focus {
-  //   border-bottom: 2px solid #F75961;
-  //   outline: none;
-  // }
+  border-bottom: 2px solid #F75961 !important;
 }
 
 .open-tab-buttons {
@@ -37,8 +30,9 @@ button:focus {
 }
 
 .activity-btn {
+  border: none;
   width: 50%;
-  transition: border-bottom 0.5s ease;
+  background-color: white;
   color: black;
 }
 
