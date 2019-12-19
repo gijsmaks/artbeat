@@ -6,8 +6,6 @@ const loading = (event) => {
 
   if (findButton) {
     findButton.addEventListener("click", (event) => {
-      // console.log('yo ben')
-      // event.preventDefault()
       loadingContent.style.visibility = "hidden";
       loadingGrid.style.display = "block";
     });
