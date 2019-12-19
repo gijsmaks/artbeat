@@ -3,10 +3,10 @@
     <h3><%= current_user.username %></h3>
     <p><%= current_user.email %></p>
 
-<div class="top-and-bottom-border"></div>
-      <div class="open-tab-buttons">
-        <button class="activity-btn active" id="btn-left"> Collections </button>
-        <button class="activity-btn" id="btn-right" > Saved Galleries </button>
+    <div class="top-and-bottom-border"></div>
+    <div class="open-tab-buttons">
+      <button class="activity-btn active" id="btn-left"> Collections </button>
+      <button class="activity-btn" id="btn-right" > Saved Galleries </button>
     </div>
 
     <div id="content-left">
@@ -29,13 +29,18 @@
     </div>
 
     <div id="content-right">
-      <div class="saved-viewing-locations mt-3">
-        <% current_user.favorites.each do |location| %>
-        <% if current_user.favorites %>
-        <div class="d-flex m-3">
-          <div><%= location.viewing_location.name %></div>
-        </div>
-        <% end %>
+      <div class="collections mt-3">
+        <% current_user.favorites.each do |favorite| %>
+          <%= link_to viewing_location_path(favorite.viewing_location) do %>
+            <div class="collection-thumb d-flex">
+              <% if current_user.favorites %>
+                <div class="collection-image"><%= cl_image_tag favorite.viewing_location.photo, alt: "#" %></div>
+              <% end %>
+              <div class="collection-tag-link">
+                <p><%= favorite.viewing_location.name %></p>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>

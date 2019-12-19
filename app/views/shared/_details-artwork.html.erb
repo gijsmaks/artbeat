@@ -24,8 +24,11 @@
           <p><strong>Gallery</strong></p>
         </div>
         <div class="flex-justify-space-between">
+          <div class="flex">
+          <div class="collection-image"><%= cl_image_tag artwork.viewing_location.photo, alt: "#" %></div>
           <p><%= artwork.viewing_location.name %></p>
-          <%= link_to "More work", viewing_location_path(artwork.viewing_location), class: "btn-flat-small" %>
+          </div>
+          <%= link_to "Gallery Info", viewing_location_path(artwork.viewing_location), class: "btn-flat-small" %>
         </div>
       </div>
 
