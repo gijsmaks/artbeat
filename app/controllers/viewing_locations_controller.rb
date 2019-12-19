@@ -15,7 +15,8 @@ class ViewingLocationsController < ApplicationController
     @artworks = Artwork.where(viewing_location_id: @viewing_location.id)
     @markers = [{
       lat: @viewing_location.latitude,
-      lng: @viewing_location.longitude
+      lng: @viewing_location.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { viewing_location: viewing_location })
     }]
   end
 end
