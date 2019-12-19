@@ -27,5 +27,6 @@ const openTabForMap = () => {
     });
   }
 };
-
 export { openTabForMap };
+
+
