@@ -143,7 +143,7 @@ jerome_mesnager = Artist.create(
   )
 
 ############ artwork ################
-sin_titulo_6 = Artwork.create!(
+el_tigre = Artwork.create!(
   viewing_location: locust_focus,
   title: 'El Tigre',
   artist: franco_fasoli,
