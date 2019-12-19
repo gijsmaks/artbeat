@@ -23,7 +23,7 @@
         <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Upload your image", new_artwork_path(current_user.id), class: "nav-link" %>
+        <%= link_to "Image search", new_artwork_path(current_user.id), class: "nav-link" %>
       </li>
       <li class="nav-item-log-in-out">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
