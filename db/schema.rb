@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_144233) do
   create_table "artworks", force: :cascade do |t|
     t.string "photo"
     t.string "title"
-    t.date "date_of_creation"
+    t.string "date_of_creation"
     t.text "description"
     t.bigint "artist_id"
     t.bigint "viewing_location_id"
@@ -105,9 +105,9 @@ ActiveRecord::Schema.define(version: 2019_12_18_144233) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
     t.float "latitude"
     t.float "longitude"
+    t.string "description"
     t.string "photo"
   end
 
