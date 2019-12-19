@@ -1,5 +1,17 @@
-<%= simple_form_for(@artwork) do |f| %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.button :submit, class:"btn-flat", value:"Find" %>
-<% end %>
+<div class="container loading-page">
+  <div class="loader-content" style="position: relative;">
+    <h2 style="margin-top: 104px; margin-bottom: 16px;">Upload a photo to look for art!</h2>
+    <div class="image-uploader">
+      <%= simple_form_for(@artwork) do |f| %>
+        <%= f.input :photo, input_html: { class: "d-none" }, label_html: { class: 'upload-photo'}, label: 'Upload a photo' %>
+        <%= f.input :photo_cache, as: :hidden%>
+        <%= f.button :submit, class: "btn-flat btn-find", value:"Find" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="loading">
+    <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <br>
+    <h3>Looking for artwork...</h3>
+  </div>
+</div>
